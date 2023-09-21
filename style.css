@@ -4,6 +4,7 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 150%;
     color:#fff;
+
 }
 
 
@@ -58,5 +59,8 @@ input[type="number"] {
   }
 
 #line{
-    border: 50px solid white;
+    border: 50px solid whitesmoke;
+}
+.line1{
+    border:10px solid whitesmoke;
 }
