@@ -57,3 +57,6 @@ input[type="number"] {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 
+#line{
+    border: 50px solid white;
+}
