@@ -1,26 +1,25 @@
 const fibonacciButton = document.getElementById('fibonacciButton');
-
-fibonacciButton.addEventListener('click', function (){
+fibonacciButton.addEventListener('click', function () {
+    let n = parseInt(document.getElementById('insertFibonacci').value);
+    let resultFibonacci = document.getElementById('resultFibonacci');
     
-    let terms = parseInt(document.getElementById('insertFibonacci').value);
-    
-    if (isNaN(terms) || terms <= 0) {
-        alert('Please enter a valid positive integer for the number of terms.');
-        return;
-    }
-
-    let a = 0;
-    let b = 1;
-    let c;
-
-    for (let i = 0; i < terms; i++) {
-        c = a + b;
-        a = b;
-        b = c;
-        document.getElementById('resultFibonacci').textContent += c + ',';
-
+    if (n <= 0) {
+        resultFibonacci.textContent = "The n must be bigger than 0";
+    } else {
+        let a = 0;
+        let b = 1;
+        let result = 0;
+        
+        for (let i = 2; i <= n; i++) {
+            result = a + b;
+            a = b;
+            b = result;
+        }
+        
+        resultFibonacci.textContent = "The " + n + " Fibonacci sequence is :" + result;
     }
 });
+
 
 //KUBUS
 const cubeButton = document.getElementById('cubeButton');
