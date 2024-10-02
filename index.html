@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>gabrielnp</title>
     <link rel="stylesheet" href="src/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
     <style>
         /* CSS untuk efek pemudaran */
         .header {
@@ -22,16 +24,35 @@
 <body class="font-sans bg-gray-50 text-gray-900">
     <header class="header p-6 bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold text-gray-800">GabrielNathanael</a>
-            <div>
+            <a href="/" class="flex items-center text-2xl font-bold text-gray-800">
+                <img src="images/favicon.ico" alt="Icon" class="w-8 h-8 mr-2"> 
+                GabrielNathanael
+            </a>
+            
+            <!-- Hamburger Menu Button -->
+            <button id="menu-toggle" class="md:hidden flex items-center px-3 py-2 text-gray-700 hover:text-blue-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+    
+            <!-- Navigation Links -->
+            <div id="menu" class="hidden md:flex md:items-center md:space-x-4">
                 <a href="#about" class="px-4 py-2 text-gray-700 hover:text-blue-600">About</a>
                 <a href="#projects" class="px-4 py-2 text-gray-700 hover:text-blue-600">Projects</a>
                 <a href="#certificates" class="px-4 py-2 text-gray-700 hover:text-blue-600">Certificates</a>
                 <a href="#organizational" class="px-4 py-2 text-gray-700 hover:text-blue-600">Organizational Experience</a>
             </div>
         </nav>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block px-4 py-2 text-gray-700 hover:text-blue-600">About</a>
+            <a href="#projects" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Projects</a>
+            <a href="#certificates" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Certificates</a>
+            <a href="#organizational" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Organizational Experience</a>
+        </div>
     </header>
-
     <main>
         <section class="container mx-auto py-20">
             <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12 px-4 md:px-8 shadow-md rounded-lg bg-white py-16">
@@ -63,7 +84,7 @@
                 </div>
         
                 <!-- Teks Connect With Me -->
-                <div class=" pl-64 flex-1 ml-12 ">
+                <div class=" pl-5 md:pl-64 flex-1 ml-12 ">
                     <div class="text-center md:text-left">
                         <p class="text-gray-700 mt-8 font-semibold text-xl">Connect With Me:</p>
                         <ul class="mt-4 space-y-4 text-center md:text-left">
@@ -201,6 +222,16 @@
                 header.classList.remove('scrolled');
             }
         });
+    </script>
+
+    <script>
+    // JavaScript to toggle mobile menu visibility
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
     </script>
 </body>
 </html>
