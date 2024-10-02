@@ -762,8 +762,12 @@ video {
   padding-bottom: 5rem;
 }
 
-.pl-96 {
-  padding-left: 24rem;
+.pl-64 {
+  padding-left: 16rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
