@@ -1,237 +1,421 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gabrielnp</title>
-    <link rel="stylesheet" href="src/output.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <style>
-        /* CSS untuk efek pemudaran */
-        .header {
-            transition: background-color 0.3s, box-shadow 0.3s;
+    <script>
+        // Tailwind Dark Mode Configuration
+        tailwind.config = {
+            darkMode: 'class',
         }
-        .header.scrolled {
-            background-color: rgba(255, 255, 255, 0.9); /* Memudar warna latar belakang */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan saat menggulir */
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #3b82f6 !important;
         }
     </style>
 
-    
+    <style>
+    .raleway-custom {
+      font-family: "Raleway", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500; /* Ganti dengan nilai yang diinginkan, misalnya 100, 300, 700, dst. */
+      font-style: normal;
+    }
+    </style>
+  
 </head>
-<body class="font-sans bg-gray-50 text-gray-900">
-    <header class="header p-6 bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto flex justify-between items-center">
-            <a href="/" class="flex items-center text-2xl font-bold text-gray-800">
-                <img src="images/favicon.ico" alt="Icon" class="w-8 h-8 mr-2"> 
-                GabrielNathanael
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300 raleway-custom">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-md z-50 transition-colors duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            
+            <a href="#beranda" class="flex items-center">
+                <h1 class="text-2xl font-bold dark:text-white flex items-center">
+                    <img src="images/favicon.ico" alt="Gabriel Icon" class="w-6 h-6 mr-2">
+                    GabrielNathanael
+                </h1>
             </a>
             
-            <!-- Hamburger Menu Button -->
-            <button id="menu-toggle" class="md:hidden flex items-center px-3 py-2 text-gray-700 hover:text-blue-600">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-    
-            <!-- Navigation Links -->
-            <div id="menu" class="hidden md:flex md:items-center md:space-x-4">
-                <a href="#about" class="px-4 py-2 text-gray-700 hover:text-blue-600">About</a>
-                <a href="#projects" class="px-4 py-2 text-gray-700 hover:text-blue-600">Projects</a>
-                <a href="#certificates" class="px-4 py-2 text-gray-700 hover:text-blue-600">Certificates</a>
-                <a href="#organizational" class="px-4 py-2 text-gray-700 hover:text-blue-600">Organizational Experience</a>
+            <div class="flex items-center space-x-4">
+                <!-- Dark Mode Toggle -->
+                <button id="dark-mode-toggle" class="text-gray-600 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 mr-2">
+                    <i id="theme-icon" class="fas fa-moon"></i>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-toggle" class="md:hidden text-gray-600 dark:text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
-        </nav>
-    
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about" class="block px-4 py-2 text-gray-700 hover:text-blue-600">About</a>
-            <a href="#projects" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Projects</a>
-            <a href="#certificates" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Certificates</a>
-            <a href="#organizational" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Organizational Experience</a>
+            
+            <!-- Desktop Navigation -->
+            <div id="desktop-nav" class="hidden md:flex space-x-4">
+                <a href="#beranda" class="hover:text-blue-500 dark:text-white dark:hover:text-blue-400 transition">Home</a>
+                <a href="#tentang" class="hover:text-blue-500 dark:text-white dark:hover:text-blue-400 transition">About Me</a>
+                <a href="#projects" class="hover:text-blue-500 dark:text-white dark:hover:text-blue-400 transition">Project</a>
+                <a href="#sertifikat" class="hover:text-blue-500 dark:text-white dark:hover:text-blue-400 transition">Certificate</a>
+                <a href="#kontak" class="hover:text-blue-500 dark:text-white dark:hover:text-blue-400 transition">Contact</a>
+            </div>
         </div>
-    </header>
-    <main>
-        <section class="container mx-auto py-20">
-            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12 px-4 md:px-8 shadow-md rounded-lg bg-white py-16">
-                <!-- Foto Gabriel -->
-                <div class="flex-shrink-0">
-                    <img src="images/profile.jpg" alt="Foto Gabriel" class="w-64 h-64 rounded-full shadow-lg">
-                </div>
-                <!-- Teks Halo dan Deskripsi -->
-                <div class="text-center md:text-left">
-                    <h1 class="text-4xl font-bold text-gray-900">Hello, I'm Gabriel Nathanael P 👋</h1>
-                  
-                </div>
-            </div>
-        </section>
-        
-        
-        <section id="about" class="container mx-auto py-20 px-4 md:px-8">
-            <div class="flex flex-col md:flex-row items-start space-y-8 md:space-y-0 md:space-x-12">
-                <!-- Teks WHO AM I? -->
-                <div class="flex-1">
-                    <div class="text-center md:text-left">
-                        <h1 class="text-4xl font-bold text-gray-900">WHO AM I?</h1>
-                        <p class="text-gray-700 mt-4 max-w-lg text-justify">
-                            I’m a Computer Science student at Universitas Pendidikan Ganesha with a passion for learning and exploring new technologies. I have experience in website development and a foundational understanding of C, C++,C#, Python, PHP, and network security. I also enjoy playing Capture The Flag (CTF) games, which fuels my interest in cybersecurity and problem-solving. 
-                        </p>
-                        
-                      
-                    </div>
-                </div>
-        
-                <!-- Teks Connect With Me -->
-                <div class=" pl-5 md:pl-64 flex-1 ml-12 ">
-                    <div class="text-center md:text-left">
-                        <p class="text-gray-700 mt-8 font-semibold text-xl">Connect With Me:</p>
-                        <ul class="mt-4 space-y-4 text-center md:text-left">
-                            <li class="flex items-center justify-center md:justify-start space-x-2">
-                                <i class="fab fa-instagram text-xl text-blue-600"></i>
-                                <a href="https://instagram.com/gabrielnathanaelp" target="_blank" class="text-blue-600 hover:underline">@gabrielnathanaelp</a>
-                            </li>
-                            <li class="flex items-center justify-center md:justify-start space-x-2">
-                                <i class="fab fa-github text-xl text-gray-800"></i>
-                                <a href="https://github.com/GabrielNathanael" target="_blank" class="text-blue-600 hover:underline">GabrielNathanael</a>
-                            </li>
-                            <li class="flex items-center justify-center md:justify-start space-x-2">
-                                <i class="fas fa-envelope text-xl text-red-600"></i>
-                                <a href="mailto:gabrielnp.omg@gmail.com" class="text-blue-600 hover:underline">gabrielnp.omg@gmail.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        
-        
-        <section id="projects" class="container mx-auto py-20 px-4 md:px-8">
-            <!-- Centered Heading -->
-            <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Projects</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Project 1 -->
-                <div class="bg-white p-6 shadow-md rounded-lg">
-                    <img src="/images/project1.jpg" alt="Project One" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-semibold">Statistic Website</h3>
-                    <p class="text-gray-700 mt-2 text-justify">Website Statistika simplifies data management and analysis with tools for single-value data, grouped data, frequency distributions, T-tests, and Z-tables using Laravel Framework.</p>
-                </div>
-        
-                <!-- Project 2 -->
-                <div class="bg-white p-6 shadow-md rounded-lg">
-                    <img src="/images/project2.jpg" alt="Project Two" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-semibold ">HTML Quiz</h3>
-                    <p class="text-gray-700 mt-2 text-justify">Simple HTML Quiz App Built with Vue.</p>
-                </div>
-        
-                <!-- Project 3 -->
-                <div class="bg-white p-6 shadow-md rounded-lg">
-                    <img src="/images/project3.jpg" alt="Project Three" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-semibold">I-BEN</h3>
-                    <p class="text-gray-700 mt-2 text-justify">This group project, developed with Laravel 10, enables users to check fuel availability and make online purchases. As part of a 4-member team, I focused on the backend, specifically integrating a payment gateway using the Tripay API to facilitate secure transactions on the website.</p>
-                </div>
-        
-                <!-- Add more projects as needed -->
-            </div>
-        </section>
-        
-        <section id="certificates" class="container mx-auto py-20 px-4 md:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Certificates</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Certificate 1 -->
-                <div class="bg-white p-6 shadow-md rounded-lg">
-                    <img src="/images/certificate1.jpg" alt="Certificate One" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-semibold">Introduction to HTML</h3>
-                    <p class="text-gray-700 mt-2">Sololearn Course Certificate.</p>
-                </div>
-        
-                <!-- Certificate 2 -->
-                <div class="bg-white p-6 shadow-md rounded-lg">
-                    <img src="/images/certificate2.jpg" alt="Certificate Two" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-semibold">Introduction to CSS.</h3>
-                    <p class="text-gray-700 mt-2">Sololearn Course Certificate.</p>
-                </div>
-        
-                <!-- Certificate 3 -->
-                <div class="bg-white p-6 shadow-md rounded-lg">
-                    <img src="/images/certificate3.jpg" alt="Certificate Three" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-semibold">Introduction to C++</h3>
-                    <p class="text-gray-700 mt-2">Sololearn Course Certificate.</p>
-                </div>
-        
-                <div class="bg-white p-6 shadow-md rounded-lg">
-                    <img src="/images/certificate4.jpg" alt="Certificate Three" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-semibold">Introduction to Python</h3>
-                    <p class="text-gray-700 mt-2">Sololearn Course Certificate.</p>
-                </div>
-        
-                <div class="bg-white p-6 shadow-md rounded-lg">
-                    <img src="/images/certificate5.jpg" alt="Certificate Three" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-semibold">Introduction to C</h3>
-                    <p class="text-gray-700 mt-2">Sololearn Course Certificate.</p>
-                </div>
-        
-                <div class="bg-white p-6 shadow-md rounded-lg">
-                    <img src="/images/certificate6.jpg" alt="Certificate Three" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-semibold">Introduction to C#</h3>
-                    <p class="text-gray-700 mt-2">Sololearn Course Certificate.</p>
-                </div>
-        
-                <!-- Add more certificates as needed -->
-            </div>
-        </section>
 
-        <section id="organizational" class="container mx-auto py-20 px-4 md:px-8">
-            <!-- Centered Heading -->
-            <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Organizational Experience</h2>
-            <div class="flex justify-center">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <!-- Organizational 1 -->
-                    <div class="bg-white p-6 shadow-md rounded-lg flex flex-col items-center">
-                        <img src="/images/organizational1.jpg" alt="organizational One" class="w-full h-48 object-cover rounded-md mb-4">
-                        <h3 class="text-xl font-semibold text-left w-full">BEM FTK Universitas Pendidikan Ganesha</h3>
-                        <p class="text-gray-700 mt-2 text-left w-full">BEM FTK Period 2023-2024.</p>
-                    </div>
-        
-                    <!-- Organizational 2 -->
-                    <div class="bg-white p-6 shadow-md rounded-lg flex flex-col items-center">
-                        <img src="/images/organizational2.jpg" alt="organizational Two" class="w-full h-48 object-cover rounded-md mb-4">
-                        <h3 class="text-xl font-semibold text-left w-full">BEM FTK Universitas Pendidikan Ganesha</h3>
-                        <p class="text-gray-700 mt-2 text-left w-full">BEM FTK Period 2024-2025.</p>
-                    </div>
+        <!-- Mobile Menu Slide-in -->
+        <div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full bg-white dark:bg-gray-900 z-40 shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="relative h-full">
+                <!-- Close Button -->
+                <button id="mobile-menu-close" class="absolute top-4 right-4 text-gray-600 dark:text-white">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+
+                <!-- Mobile Navigation Links -->
+                <div class="flex flex-col justify-center h-full pl-6 space-y-6">
+                    <a href="#beranda" class="mobile-nav-link text-left text-gray-800 dark:text-white hover:text-blue-600 text-lg">Home</a>
+                    <a href="#tentang" class="mobile-nav-link text-left text-gray-800 dark:text-white hover:text-blue-600 text-lg">About Me</a>
+                    <a href="#projects" class="mobile-nav-link text-left text-gray-800 dark:text-white hover:text-blue-600 text-lg">Project</a>
+                    <a href="#sertifikat" class="mobile-nav-link text-left text-gray-800 dark:text-white hover:text-blue-600 text-lg">Certificate</a>
+                    <a href="#kontak" class="mobile-nav-link text-left text-gray-800 dark:text-white hover:text-blue-600 text-lg">Contact</a>
                 </div>
             </div>
-        </section>
-        
-        
-    </main>
+        </div>
+    </nav>
 
-    <footer class="p-6 bg-white shadow-md mt-12">
-        <p class="text-center text-gray-500">&copy; Created By GabrielNathanael | All rights Reserved </p>
+    <!-- Beranda -->
+    <section 
+    id="beranda" 
+    class="min-h-screen flex items-center justify-center pt-16 bg-cover bg-center dark:bg-gray-900 transition-colors duration-300"
+    style="background-image: url('/images/background.jpg');">
+    <div class="text-center">
+        <img 
+            src="images/profile.jpg" 
+            alt="Gabriel" 
+            class="w-48 h-48 rounded-full mx-auto mb-6 object-cover border-4 border-black dark:border-white"
+        />
+        <h1 class="text-5xl font-bold mb-4 dark:text-white">Hello, I am Gabriel</h1>
+        <p class="text-xl text-black-600 dark:text-gray-300">just a chill guy</p>
+    </div>
+    </section>
+
+    <!-- Tentang Section -->
+    <section id="tentang" class="min-h-screen bg-white dark:bg-gray-800 flex items-center py-16 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white transition-colors raleway-custom">
+                WHO AM I?
+            </h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center transition-colors raleway-custom">
+                    I’m a Computer Science student at Universitas Pendidikan Ganesha with a passion for learning and exploring new technologies. I have experience in website development and a foundational understanding of C, C++, C#, Python, PHP, and network security. I also enjoy playing Capture The Flag (CTF) games, which fuels my interest in cybersecurity and problem-solving.
+                </p>
+                <div class="flex justify-center mt-8 space-x-4">
+                    <a href="#kontak" 
+                    class="border border-blue-500 text-blue-500 dark:text-blue-400 px-6 py-2 rounded-md 
+                            hover:bg-blue-500 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 
+                            transition raleway-custom">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Project Section -->
+    <section id="projects" class="bg-gray-100 dark:bg-gray-900 py-16 transition-colors duration-300 raleway-custom">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 dark:text-white raleway-custom">Projects</h2>
+
+            <div class="swiper project-swiper">
+                <div class="swiper-wrapper project-swiper-wrapper">
+                    <!-- Projects will be dynamically inserted via JavaScript -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sertifikat Section -->
+    <section id="sertifikat" class="bg-white dark:bg-gray-800 py-16 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 dark:text-white raleway-custom">Certificates</h2>
+
+            <div class="swiper certificate-swiper">
+                <div class="swiper-wrapper certificate-swiper-wrapper">
+                    <!-- Sertifikat will be dynamically inserted via JavaScript -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-16">
+        <div class="container mx-auto px-4 raleway-custom">
+            <h2 class="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white transition-colors">
+                Contact Me
+            </h2>
+            <form 
+                id="contactForm" 
+                class="max-w-lg mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition-colors duration-300"
+            >
+                <div class="mb-4">
+                    <label for="name" class="block mb-2 text-gray-700 dark:text-gray-300 transition-colors">
+                        Your Name
+                    </label>
+                    <input 
+                        id="name"
+                        name="from_name"
+                        type="text" 
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 
+                               focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 
+                               dark:focus:ring-blue-400 transition-colors"
+                        placeholder="Your name"
+                        required
+                    />
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block mb-2 text-gray-700 dark:text-gray-300 transition-colors">
+                        Your Email
+                    </label>
+                    <input 
+                        id="email"
+                        name="user_email"
+                        type="email" 
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 
+                               focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 
+                               dark:focus:ring-blue-400 transition-colors"
+                        placeholder="email@example.com"
+                        required
+                    />
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block mb-2 text-gray-700 dark:text-gray-300 transition-colors">
+                        Message
+                    </label>
+                    <textarea 
+                        id="message"
+                        name="message"
+                        class="w-full px-3 py-2 border rounded-md h-32 focus:outline-none focus:ring-2 
+                                  focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 
+                                  dark:focus:ring-blue-400 transition-colors"
+                        placeholder="Write your message"
+                        required
+                    ></textarea>
+                </div>
+                <div class="text-center">
+                    <button 
+                        type="submit"
+                        class="bg-blue-500 text-white px-8 py-3 rounded-md hover:bg-blue-600 dark:hover:bg-blue-400 
+                               dark:bg-blue-600 transition"
+                    >
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center ">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://github.com/GabrielNathanael" class="text-2xl hover:text-blue-500 transition" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/gabriel-nathanael-purba-732752330/" class="text-2xl hover:text-blue-500 transition" target="_blank">  <i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/gabrielnathanaelp" class="text-2xl hover:text-blue-500 transition" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="raleway-custom">&copy; Created By GabrielNathanael | All rights Reserved</p>
+        </div>
     </footer>
 
-    <!-- JavaScript untuk efek pemudaran saat menggulir -->
     <script>
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
+        // Smooth scrolling untuk tautan internal
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        // Cek tema awal
+        if (localStorage.getItem('theme') === 'dark') {
+            htmlElement.classList.add('dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
             } else {
-                header.classList.remove('scrolled');
+                localStorage.removeItem('theme');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
             }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        // Open Mobile Menu
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+        });
+
+        // Close Mobile Menu
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+        });
+
+        // Close menu when a nav link is clicked
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+            });
+        });
+
+
+        // Sertifikat Carousel
+        const certificates = [
+            { title: "Azure AI Fundamentals", issuer: "Coursera", year: 2023, image: "/images/certificate7.jpg" },
+            { title: "Sololearn Introduction to HTML", issuer: "Udacity", year: 2022, image: "/images/certificate1.jpg" },
+            { title: "Sololearn Introduction to CSS", issuer: "Udemy", year: 2021, image: "/images/certificate2.jpg" },
+            { title: "Sololearn Introduction to C++", issuer: "Udemy", year: 2021, image: "/images/certificate3.jpg" },
+            { title: "Sololearn Introduction to Python", issuer: "Udemy", year: 2021, image: "/images/certificate4.jpg" },
+            { title: "Sololearn Introduction to C", issuer: "Udemy", year: 2021, image: "/images/certificate5.jpg" },
+            { title: "Sololearn Introduction to C#", issuer: "Udemy", year: 2021, image: "/images/certificate6.jpg" },
+            // Tambahkan sertifikat lainnya di sini
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const certificateSwiperWrapper = document.querySelector('.certificate-swiper-wrapper');
+            
+            certificates.forEach(cert => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                slide.innerHTML = `
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+                        <img src="${cert.image}" alt="${cert.title}" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold dark:text-white">${cert.title}</h3>
+                        </div>
+                    </div>
+                `;
+                certificateSwiperWrapper.appendChild(slide);
+            });
+
+            new Swiper('.certificate-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                breakpoints: {
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            });
+        });
+
+        // project Carousel
+        const projects = [
+            { title: "I-BEN", issuer: "Coursera", year: 2023, image: "/images/project3.jpg" },
+            { title: "Statistic Website", issuer: "Udacity", year: 2022, image: "/images/project1.jpg" },
+            { title: "HTML Quiz with VUE", issuer: "Udemy", year: 2021, image: "/images/project2.jpg" },
+            // Tambahkan sertifikat lainnya di sini
+        ];
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectSwiperWrapper = document.querySelector('.project-swiper-wrapper');
+
+            projects.forEach(project => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                slide.innerHTML = `
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                        <img src="${project.image}" alt="${project.title}" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold dark:text-white">${project.title}</h3>
+                        </div>
+                    </div>
+                `;
+                projectSwiperWrapper.appendChild(slide);
+            });
+
+            new Swiper('.project-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                breakpoints: {
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            });
+        });
+
+        // Initialize Email.js
+        (function() {
+            emailjs.init("IEi5Rpo2GniMIrc0a"); // Public Key Anda
+        })();
+
+        // Form submission handling
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const serviceID = "service_lqb2htf"; // Your Service ID
+            const templateID = "template_xg71zxn"; // Template ID Anda
+
+            // Send the form data using Email.js
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    alert("Message sent successfully!");
+                    this.reset(); // Reset the form
+                })
+                .catch((error) => {
+                    alert("Failed to send message. Please try again.");
+                    console.error("Email.js error:", error);
+                });
         });
     </script>
 
-    <script>
-    // JavaScript to toggle mobile menu visibility
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
 
-    menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-    </script>
 </body>
 </html>
