@@ -100,21 +100,25 @@
         <div id="menu-overlay" class="fixed inset-0 bg-black/20 dark:bg-black/40 backdrop-blur-sm z-30 hidden transition-opacity duration-300">
         </div>
     <!-- Beranda -->
-    <section id="beranda" class="relative min-h-screen flex items-center justify-center pt-16 bg-cover bg-center dark:bg-gray-900 transition-colors duration-300"
-        style="background-image: url('/images/background.jpg');"
-        >
-        <!-- 🔥 Layer Transparan -->
-        <div class="absolute inset-0 bg-black/30 dark:bg-black/40 z-0"></div>
+    <section id="beranda" class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+    <!-- Background Image -->
+        <img 
+            src="/images/background.jpg" 
+            alt="Background" 
+            class="absolute inset-0 w-full h-full object-cover object-right md:object-center z-0"
+        />
 
-        <!-- Konten -->
+        <!-- Konten utama -->
         <div class="relative z-10 text-center">
             <img 
-            src="images/profile.jpg" 
+            src="/images/profile.jpg" 
             alt="Gabriel" 
-            class="w-48 h-48 rounded-full mx-auto mb-6 object-cover border-4 border-black dark:border-white"
+            class="w-40 h-40 sm:w-48 sm:h-48 rounded-full mx-auto mb-4 object-cover border-4 border-black dark:border-white"
             />
-            <h1 class="text-5xl font-bold mb-4 dark:text-white">Hello, I am Gabriel</h1>
-            <p id="animated-role" class="text-xl mt-2 text-black dark:text-gray-300 h-6"></p>
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray drop-shadow-md">
+            Hello, I am Gabriel
+            </h1>
+            <p id="animated-role" class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray mt-2 drop-shadow-md h-6"></p>
         </div>
     </section>
 
@@ -254,18 +258,31 @@
 
     <script>
     new TypeIt("#animated-role", {
-        strings: ["a student", "a full stack developer", "a cloud engineer"],
         speed: 100,
-        breakLines: false,
-        waitUntilVisible: true,
         deleteSpeed: 50,
         loop: true,
-        nextStringDelay: 1500,
-    }).go();
+        breakLines: false,
+        waitUntilVisible: true,
+        lifeLike: false,
+        startDelay: 0
+    })
+    .type("a student")
+    .pause(1200)
+    .delete()
+    .type("a full stack developer")
+    .pause(1200)
+    .delete()
+    .type("a cloud enthusiast")
+    .pause(1200)
+    .delete()
+    .type("a cybersecurity enthusiast")
+    .pause(1200)
+    .delete()
+    .go();
     </script>
 
     <script>
-        // Smooth scrolling untuk tautan internal
+       
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
