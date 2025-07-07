@@ -1,0 +1,45 @@
+<nav class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-md z-50 transition-colors duration-300">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a class="flex items-center" href="#beranda">
+<h1 class="text-2xl font-bold dark:text-white flex items-center">
+<img alt="Gabriel Icon" class="w-6 h-6 mr-2" src="images/favicon.ico"/>
+                    GabrielNathanael
+                </h1>
+</a>
+<div class="flex items-center space-x-4">
+<!-- Dark Mode Toggle -->
+<button class="text-gray-600 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 mr-2" id="dark-mode-toggle">
+<i class="fas fa-moon" id="theme-icon"></i>
+</button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-gray-600 dark:text-white" id="mobile-menu-toggle">
+<i class="fas fa-bars text-2xl"></i>
+</button>
+</div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex space-x-4" id="desktop-nav">
+<a class="hover:text-blue-500 dark:text-white dark:hover:text-blue-400 transition" href="#beranda">Home</a>
+<a class="hover:text-blue-500 dark:text-white dark:hover:text-blue-400 transition" href="#tentang">About Me</a>
+<a class="hover:text-blue-500 dark:text-white dark:hover:text-blue-400 transition" href="#projects">Project</a>
+<a class="hover:text-blue-500 dark:text-white dark:hover:text-blue-400 transition" href="#sertifikat">Certificate</a>
+<a class="hover:text-blue-500 dark:text-white dark:hover:text-blue-400 transition" href="#kontak">Contact</a>
+</div>
+</div>
+<!-- Mobile Menu Slide-in -->
+<div class="fixed top-0 left-0 w-64 h-full bg-white dark:bg-gray-900 z-40 shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out" id="mobile-menu">
+<div class="relative h-full">
+<!-- Close Button -->
+<button class="absolute top-4 right-4 text-gray-600 dark:text-white" id="mobile-menu-close">
+<i class="fas fa-times text-2xl"></i>
+</button>
+<!-- Mobile Navigation Links -->
+<div class="flex flex-col justify-center h-full pl-6 space-y-6">
+<a class="mobile-nav-link text-left text-gray-800 dark:text-white hover:text-blue-600 text-lg" href="#beranda">Home</a>
+<a class="mobile-nav-link text-left text-gray-800 dark:text-white hover:text-blue-600 text-lg" href="#tentang">About Me</a>
+<a class="mobile-nav-link text-left text-gray-800 dark:text-white hover:text-blue-600 text-lg" href="#projects">Project</a>
+<a class="mobile-nav-link text-left text-gray-800 dark:text-white hover:text-blue-600 text-lg" href="#sertifikat">Certificate</a>
+<a class="mobile-nav-link text-left text-gray-800 dark:text-white hover:text-blue-600 text-lg" href="#kontak">Contact</a>
+</div>
+</div>
+</div>
+</nav>
