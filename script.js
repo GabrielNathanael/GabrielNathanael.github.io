@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Data Project
 const projects = [
     { title: "Laravel Web + Tripay API", issuer: "", year: 2023, image: "/images/project3.jpg", link: "https://github.com/chiknwy/I_Ben-Project" },
-    { title: "Statistic Website", issuer: "", year: 2022, image: "/images/project1.jpg", link: "https://github.com/GabrielNathanael/statistika-web" },
+    { title: "Laravel Statistic Web", issuer: "", year: 2022, image: "/images/project1.jpg", link: "https://github.com/GabrielNathanael/statistika-web" },
     { title: "Flappy Bird with NEAT", issuer: "", year: 2021, image: "/images/project2.jpg", link: "https://github.com/GabrielNathanael/AI-FlappyBird" },
     { title: "Draw  with Turtle and OpenCV", issuer: "", year: 2021, image: "/images/project4.jpg", link: "https://github.com/GabrielNathanael/AI-FlappyBird" },
     // Tambahkan projek jika perlu
