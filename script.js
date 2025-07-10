@@ -152,10 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Data Project
 const projects = [
-    { title: "Laravel Web + Tripay API", issuer: "", year: 2023, image: "/images/project3.jpg", link: "https://github.com/chiknwy/I_Ben-Project" },
-    { title: "Laravel Statistic Web", issuer: "", year: 2022, image: "/images/project1.jpg", link: "https://github.com/GabrielNathanael/statistika-web" },
-    { title: "Flappy Bird with NEAT", issuer: "", year: 2021, image: "/images/project2.jpg", link: "https://github.com/GabrielNathanael/AI-FlappyBird" },
-    { title: "Draw  with Turtle and OpenCV", issuer: "", year: 2021, image: "/images/project4.jpg", link: "https://github.com/GabrielNathanael/AI-FlappyBird" },
+    { title: "Task Manager Web App with VITE React and Laravel", year: 2025, image: "/images/project5.jpg", link: "https://github.com/GabrielNathanael/Task-Manager-Fullstack-App" },
+    { title: "Laravel Web App + Tripay API", year: 2023, image: "/images/project3.jpg", link: "https://github.com/chiknwy/I_Ben-Project" },
+    { title: "Laravel Statistic Web", year: 2022, image: "/images/project1.jpg", link: "https://github.com/GabrielNathanael/statistika-web" },
+    { title: "Flappy Bird with NEAT (NeuroEvolution of Augmenting Topologies)", year: 2021, image: "/images/project2.jpg", link: "https://github.com/GabrielNathanael/AI-FlappyBird" },
+    { title: "Draw  with Turtle and OpenCV", year: 2021, image: "/images/project4.jpg", link: "https://github.com/GabrielNathanael/AI-FlappyBird" },
     // Tambahkan projek jika perlu
 ];
 
