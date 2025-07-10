@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
                 <img src="${cert.image}" alt="${cert.title}" class="w-full h-56 object-fit: contain">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold dark:text-white">${cert.title}</h3>
+                    <h3 class="text-base font-semibold dark:text-white">${cert.title}</h3>
                 </div>
             </div>
         `;
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Data Project
 const projects = [
-    { title: "Task Manager Web App with VITE React and Laravel", year: 2025, image: "/images/project5.jpg", link: "https://github.com/GabrielNathanael/Task-Manager-Fullstack-App" },
+    { title: "Task Manager Web App with Vite React and Laravel", year: 2025, image: "/images/project5.jpg", link: "https://github.com/GabrielNathanael/Task-Manager-Fullstack-App" },
     { title: "Laravel Web App + Tripay API", year: 2023, image: "/images/project3.jpg", link: "https://github.com/chiknwy/I_Ben-Project" },
     { title: "Laravel Statistic Web", year: 2022, image: "/images/project1.jpg", link: "https://github.com/GabrielNathanael/statistika-web" },
     { title: "Flappy Bird with NEAT (NeuroEvolution of Augmenting Topologies)", year: 2021, image: "/images/project2.jpg", link: "https://github.com/GabrielNathanael/AI-FlappyBird" },
@@ -169,10 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.className = 'swiper-slide';
         slide.innerHTML = `
             <a href="${project.link}" target="_blank" class="block">
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                    <img src="${project.image}" alt="${project.title}" class="w-full h-56 object-fit: contain">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden h-80">
+                    <img src="${project.image}" alt="${project.title}" class="w-full h-56 object-fit">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold dark:text-white">${project.title}</h3>
+                        <h3 class="text-base font-semibold dark:text-white">${project.title}</h3>
                     </div>
                 </div>
             </a>
