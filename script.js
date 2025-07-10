@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Data Project
 const projects = [
     { title: "Task Manager Web App with Vite React and Laravel", year: 2025, image: "/images/project5.jpg", link: "https://github.com/GabrielNathanael/Task-Manager-Fullstack-App" },
-    { title: "Laravel Web App using Leaflet JS and Tripay API", year: 2023, image: "/images/project3.jpg", link: "https://github.com/chiknwy/I_Ben-Project" },
+    { title: "(Group Project) Laravel Web App using Leaflet JS and Tripay API", year: 2023, image: "/images/project3.jpg", link: "https://github.com/chiknwy/I_Ben-Project" },
     { title: "Flappy Bird with NEAT (NeuroEvolution of Augmenting Topologies)", year: 2021, image: "/images/project2.jpg", link: "https://github.com/GabrielNathanael/AI-FlappyBird" },
     { title: "Laravel Web App for Statistics ", year: 2022, image: "/images/project1.jpg", link: "https://github.com/GabrielNathanael/statistika-web" },
     { title: "Draw Sketch with Turtle and OpenCV", year: 2021, image: "/images/project4.jpg", link: "https://github.com/GabrielNathanael/AI-FlappyBird" },
