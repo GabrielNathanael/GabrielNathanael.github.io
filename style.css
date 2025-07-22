@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #3b82f6 !important;
+}
+
+.manrope-custom {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.project-swiper-pagination,
+.certificate-swiper-pagination {
+  background-color: rgba(107, 114, 128, 0.3);
+  display: inline-flex !important;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  gap: 0.625rem;
+  width: auto !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-swiper-pagination .swiper-pagination-bullet,
+.certificate-swiper-pagination .swiper-pagination-bullet {
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  border-radius: 9999px;
+}
+
+.project-swiper-pagination .swiper-pagination-bullet-active,
+.certificate-swiper-pagination .swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: none !important;
+}
+#toast.show {
+  display: block;
+  opacity: 1;
+}
+
+#toast.hide {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
