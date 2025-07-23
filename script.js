@@ -2,6 +2,7 @@ tailwind.config = {
     darkMode: 'class',
 };
 
+
 new TypeIt("#animated-role", {
     speed: 100,
     deleteSpeed: 50,
@@ -95,10 +96,12 @@ mobileNavLinks.forEach(link => {
 
 const certificates = [
     { title: "Azure AI Fundamentals", issuer: "Microsoft", year: 2024, image: "/images/certificate7.jpg" },
+    { title: "Level 3: Advanced App Operations", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate14.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17075395" },
     { title: "Level 2: Modern Application Deployment", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate13.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17063870" },
     { title: "Level 1: Core Infrastructure and Security", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate9.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17032804" },
     { title: "Skills Boost Arcade Base Camp July 2025", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate10.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17021616" },
     { title: "Web Development", issuer: "Sololearn", year: 2025, image: "/images/certificate12.jpg" },
+    { title: "Skills Boost Arcade Trivia July 2025 Week 1", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate15.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17021616" },
     { title: "Sololearn Introduction to JavaScript", issuer: "Sololearn", year: 2025, image: "/images/certificate12.jpg" },
     { title: "Sololearn Introduction to Python", issuer: "Sololearn", year: 2024, image: "/images/certificate4.jpg" },
     { title: "HSK 1", issuer: "Balingkang Confucius Institute", year: 2024, image: "/images/certificate8.jpg" },
@@ -149,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         pagination: {
             el: '.certificate-swiper-pagination',
-            clickable: true
+            type: 'progressbar',
         }
     });
 });
@@ -240,9 +243,9 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.className = 'swiper-slide';
         slide.innerHTML = `
             <div role="button" tabindex="0" class="block project-card transition-transform duration-200 md:hover:scale-105 cursor-pointer">
-                <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden h-80">
+                <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden h-90">
                     <img src="${project.image}" alt="${project.title}" class="w-full h-56 object-fit">
-                    <div class="p-6">
+                    <div class="p-6 pb-4">
                         <h3 class="text-base font-semibold dark:text-white">${project.title}</h3>
                     </div>
                 </div>
@@ -265,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         pagination: {
             el: '.project-swiper-pagination',
-            clickable: true
+            type: 'progressbar',
         }
     });
 
@@ -320,9 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             modalDetail.innerHTML = `
               <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-gray-900 dark:text-white">${project.title}</h3>
-              <p class="mb-2 md:mb-4 text-gray-700 dark:text-gray-200">
-  ${(project.description || '').replace(/\n/g, '<br>')}
-</p>
+              <p class="mb-2 md:mb-4 text-gray-700 dark:text-gray-200"> ${(project.description || '').replace(/\n/g, '<br>')} </p>
               <div class="mb-2 md:mb-4 flex flex-wrap gap-2">
                 <span class="font-semibold text-gray-900 dark:text-white">Tools:</span>
                 ${project.tools ? project.tools.map(t => `<span class=\"inline-block bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded px-2 py-1 mr-1 mb-1 text-xs\">${t}</span>`).join('') : ''}
@@ -494,3 +495,9 @@ if (contactForm) {
             });
     });
 }
+
+document.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', function () {
+        this.blur();
+    });
+});
