@@ -96,15 +96,19 @@ mobileNavLinks.forEach(link => {
 
 const certificates = [
     { title: "Azure AI Fundamentals", issuer: "Microsoft", year: 2024, image: "/images/certificate7.jpg" },
+    { title: "Skills Boost Arcade Certification Zone July 2025", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate18.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17112694?locale=id" },
     { title: "Level 3: Advanced App Operations", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate14.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17075395" },
     { title: "Level 2: Modern Application Deployment", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate13.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17063870" },
     { title: "Level 1: Core Infrastructure and Security", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate9.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17032804" },
     { title: "Skills Boost Arcade Base Camp July 2025", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate10.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17021616" },
-    { title: "Web Development", issuer: "Sololearn", year: 2025, image: "/images/certificate12.jpg" },
+
     { title: "Skills Boost Arcade Trivia July 2025 Week 1", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate15.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17021616" },
+    { title: "Skills Boost Arcade Trivia July 2025 Week 3", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate16.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17094322?locale=id" },
+    { title: "Skills Boost Arcade Trivia July 2025 Week 4", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate16.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17097630?locale=id" },
+    { title: "HSK 1", issuer: "Balingkang Confucius Institute", year: 2024, image: "/images/certificate8.jpg" },
+    { title: "Web Development", issuer: "Sololearn", year: 2025, image: "/images/certificate12.jpg" },
     { title: "Sololearn Introduction to JavaScript", issuer: "Sololearn", year: 2025, image: "/images/certificate12.jpg" },
     { title: "Sololearn Introduction to Python", issuer: "Sololearn", year: 2024, image: "/images/certificate4.jpg" },
-    { title: "HSK 1", issuer: "Balingkang Confucius Institute", year: 2024, image: "/images/certificate8.jpg" },
     { title: "Sololearn Introduction to C++", issuer: "Sololearn", year: 2023, image: "/images/certificate3.jpg" },
     { title: "Sololearn Introduction to HTML", issuer: "Sololearn", year: 2023, image: "/images/certificate1.jpg" },
     { title: "Sololearn Introduction to CSS", issuer: "Sololearn", year: 2023, image: "/images/certificate2.jpg" },
@@ -125,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="bg-gray-100 dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden">
                 <img src="${cert.image}" alt="${cert.title}" class="w-full h-56 object-contain bg-white rounded-t-lg">
                 <div class="p-6">
-                    <h3 class="text-base font-semibold dark:text-white">${cert.title}</h3>
+                    <h3 class="text-[15px] font-semibold dark:text-white">${cert.title}</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">${cert.issuer} &bull; ${cert.year}</p>
                 </div>
             </div>
@@ -499,5 +503,114 @@ if (contactForm) {
 document.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', function () {
         this.blur();
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const draggable = document.getElementById('draggable-github');
+    const deleteArea = document.getElementById('delete-area');
+    const buttonSize = 40;
+
+    let isDragging = false;
+    let holdTimeout = null;
+    let mouseX = 0, mouseY = 0;
+    let rafId = null;
+
+    function moveButton() {
+        if (isDragging) {
+            draggable.style.left = `${mouseX - buttonSize / 2}px`;
+            draggable.style.top = `${mouseY - buttonSize / 2}px`;
+            draggable.style.right = 'auto';
+            draggable.style.bottom = 'auto';
+            draggable.style.position = 'fixed';
+
+
+            const deleteRect = deleteArea.getBoundingClientRect();
+            const btnRect = draggable.getBoundingClientRect();
+
+            const isOverDelete =
+                btnRect.left < deleteRect.right &&
+                btnRect.right > deleteRect.left &&
+                btnRect.top < deleteRect.bottom &&
+                btnRect.bottom > deleteRect.top;
+
+            if (isOverDelete) {
+                draggable.remove();
+                deleteArea.classList.add('hidden');
+                isDragging = false;
+                cancelAnimationFrame(rafId);
+                return;
+            }
+
+            rafId = requestAnimationFrame(moveButton);
+        }
+    }
+
+    function showDeleteArea() {
+        deleteArea.classList.remove('hidden');
+        deleteArea.classList.add('flex');
+    }
+
+    function hideDeleteArea() {
+        deleteArea.classList.add('hidden');
+        deleteArea.classList.remove('flex');
+    }
+
+
+    draggable.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        holdTimeout = setTimeout(() => {
+            isDragging = true;
+            showDeleteArea();
+            moveButton();
+        }, 400);
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        clearTimeout(holdTimeout);
+        if (isDragging) {
+            isDragging = false;
+            cancelAnimationFrame(rafId);
+            hideDeleteArea();
+        }
+    });
+
+
+    draggable.addEventListener('touchstart', (e) => {
+        if (e.touches.length !== 1) return;
+        const touch = e.touches[0];
+        mouseX = touch.clientX;
+        mouseY = touch.clientY;
+        holdTimeout = setTimeout(() => {
+            isDragging = true;
+            showDeleteArea();
+            moveButton();
+        }, 400);
+    }, { passive: false });
+
+    document.addEventListener('touchmove', (e) => {
+        if (isDragging && e.touches.length === 1) {
+            const touch = e.touches[0];
+            mouseX = touch.clientX;
+            mouseY = touch.clientY;
+        }
+    }, { passive: false });
+
+    document.addEventListener('touchend', () => {
+        clearTimeout(holdTimeout);
+        if (isDragging) {
+            isDragging = false;
+            cancelAnimationFrame(rafId);
+            hideDeleteArea();
+        }
     });
 });
