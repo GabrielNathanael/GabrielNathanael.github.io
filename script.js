@@ -506,111 +506,232 @@ document.querySelectorAll('a').forEach(a => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const draggable = document.getElementById('draggable-github');
-    const deleteArea = document.getElementById('delete-area');
-    const buttonSize = 40;
+class DraggableButton {
+    constructor(elementId) {
+        this.element = document.getElementById(elementId);
+        this.deleteArea = document.getElementById('delete-area');
+        this.isDragging = false;
+        this.hasActuallyDragged = false;
+        this.startX = 0;
+        this.startY = 0;
+        this.initialX = 0;
+        this.initialY = 0;
+        this.holdTimer = null;
+        this.holdDuration = 300;
+        this.dragThreshold = 5;
+        this.startEvent = null;
 
-    let isDragging = false;
-    let holdTimeout = null;
-    let mouseX = 0, mouseY = 0;
-    let rafId = null;
+        this.init();
+    }
 
-    function moveButton() {
-        if (isDragging) {
-            draggable.style.left = `${mouseX - buttonSize / 2}px`;
-            draggable.style.top = `${mouseY - buttonSize / 2}px`;
-            draggable.style.right = 'auto';
-            draggable.style.bottom = 'auto';
-            draggable.style.position = 'fixed';
+    init() {
+        this.element.addEventListener('mousedown', this.handleStart.bind(this));
+        document.addEventListener('mousemove', this.handleMove.bind(this));
+        document.addEventListener('mouseup', this.handleEnd.bind(this));
 
+        this.element.addEventListener('touchstart', this.handleStart.bind(this), { passive: false });
+        document.addEventListener('touchmove', this.handleMove.bind(this), { passive: false });
+        document.addEventListener('touchend', this.handleEnd.bind(this));
 
-            const deleteRect = deleteArea.getBoundingClientRect();
-            const btnRect = draggable.getBoundingClientRect();
+        this.element.addEventListener('contextmenu', (e) => {
+            if (this.isDragging) {
+                e.preventDefault();
+            }
+        });
 
-            const isOverDelete =
-                btnRect.left < deleteRect.right &&
-                btnRect.right > deleteRect.left &&
-                btnRect.top < deleteRect.bottom &&
-                btnRect.bottom > deleteRect.top;
+        this.element.addEventListener('click', (e) => {
+            if (this.hasActuallyDragged) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.hasActuallyDragged = false;
+            }
+        });
 
-            if (isOverDelete) {
-                draggable.remove();
-                deleteArea.classList.add('hidden');
-                isDragging = false;
-                cancelAnimationFrame(rafId);
+        this.element.addEventListener('mousedown', (e) => {
+            e.stopPropagation();
+        });
+
+        this.element.addEventListener('touchstart', (e) => {
+            e.stopPropagation();
+        }, { passive: false });
+    }
+
+    handleStart(e) {
+        if (e.type === 'mousedown') {
+            e.preventDefault();
+        }
+
+        this.startEvent = e;
+
+        const clientX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+        const clientY = e.type === 'mousedown' ? e.clientY : e.touches[0].clientY;
+
+        this.startX = clientX;
+        this.startY = clientY;
+
+        const rect = this.element.getBoundingClientRect();
+        this.initialX = rect.left;
+        this.initialY = rect.top;
+
+        this.holdTimer = setTimeout(() => {
+            if (this.startEvent && this.startEvent.type === 'touchstart') {
+                this.startEvent.preventDefault();
+            }
+            this.startDragging();
+        }, this.holdDuration);
+    }
+
+    startDragging() {
+        this.isDragging = true;
+        this.element.classList.add('dragging');
+        this.element.style.position = 'fixed';
+        this.element.style.zIndex = '9999';
+        this.element.style.transition = 'none';
+        this.element.style.transform = 'none';
+
+        this.showDeleteArea();
+    }
+
+    handleMove(e) {
+        if (!this.isDragging) {
+            if (this.holdTimer) {
+                clearTimeout(this.holdTimer);
+                this.holdTimer = null;
+            }
+            return;
+        }
+
+        e.preventDefault();
+
+        const clientX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+        const clientY = e.type === 'mousemove' ? e.clientY : e.touches[0].clientY;
+
+        const deltaX = clientX - this.startX;
+        const deltaY = clientY - this.startY;
+
+        const distanceMoved = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        if (distanceMoved > this.dragThreshold) {
+            this.hasActuallyDragged = true;
+        }
+
+        let newX = this.initialX + deltaX;
+        let newY = this.initialY + deltaY;
+
+        const buttonRect = this.element.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+
+        newX = Math.max(0, Math.min(newX, viewportWidth - buttonRect.width));
+        newY = Math.max(0, Math.min(newY, viewportHeight - buttonRect.height));
+
+        this.element.style.left = newX + 'px';
+        this.element.style.top = newY + 'px';
+        this.element.style.right = 'auto';
+        this.element.style.bottom = 'auto';
+
+        this.checkDeleteAreaOverlap();
+    }
+
+    handleEnd(e) {
+        if (this.holdTimer) {
+            clearTimeout(this.holdTimer);
+            this.holdTimer = null;
+        }
+
+        this.startEvent = null;
+
+        if (this.isDragging) {
+            if (this.checkDeleteAreaOverlap()) {
+                this.deleteButton();
                 return;
             }
 
-            rafId = requestAnimationFrame(moveButton);
+            this.isDragging = false;
+            this.element.classList.remove('dragging');
+
+            this.hideDeleteArea();
+
+            setTimeout(() => {
+                this.element.style.zIndex = '';
+                this.element.style.transition = '';
+            }, 100);
         }
     }
 
-    function showDeleteArea() {
-        deleteArea.classList.remove('hidden');
-        deleteArea.classList.add('flex');
+    showDeleteArea() {
+        if (this.deleteArea) {
+            this.deleteArea.classList.remove('hidden');
+            this.deleteArea.classList.add('flex');
+        }
     }
 
-    function hideDeleteArea() {
-        deleteArea.classList.add('hidden');
-        deleteArea.classList.remove('flex');
+    hideDeleteArea() {
+        if (this.deleteArea) {
+            this.deleteArea.classList.add('hidden');
+            this.deleteArea.classList.remove('flex');
+        }
     }
 
+    checkDeleteAreaOverlap() {
+        if (!this.deleteArea) return false;
 
-    draggable.addEventListener('mousedown', (e) => {
-        e.preventDefault();
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        holdTimeout = setTimeout(() => {
-            isDragging = true;
-            showDeleteArea();
-            moveButton();
-        }, 400);
-    });
+        const buttonRect = this.element.getBoundingClientRect();
+        const deleteRect = this.deleteArea.getBoundingClientRect();
 
-    document.addEventListener('mousemove', (e) => {
-        if (isDragging) {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
+        const isOverlapping = !(buttonRect.right < deleteRect.left ||
+            buttonRect.left > deleteRect.right ||
+            buttonRect.bottom < deleteRect.top ||
+            buttonRect.top > deleteRect.bottom);
+
+        if (isOverlapping) {
+            this.deleteArea.classList.add('bg-red-700');
+            this.deleteArea.classList.remove('bg-red-600/90');
+        } else {
+            this.deleteArea.classList.remove('bg-red-700');
+            this.deleteArea.classList.add('bg-red-600/90');
         }
-    });
 
-    document.addEventListener('mouseup', () => {
-        clearTimeout(holdTimeout);
-        if (isDragging) {
-            isDragging = false;
-            cancelAnimationFrame(rafId);
-            hideDeleteArea();
-        }
-    });
+        return isOverlapping;
+    }
 
+    deleteButton() {
+        this.hideDeleteArea();
 
-    draggable.addEventListener('touchstart', (e) => {
-        if (e.touches.length !== 1) return;
-        const touch = e.touches[0];
-        mouseX = touch.clientX;
-        mouseY = touch.clientY;
-        holdTimeout = setTimeout(() => {
-            isDragging = true;
-            showDeleteArea();
-            moveButton();
-        }, 400);
-    }, { passive: false });
+        this.element.remove();
 
-    document.addEventListener('touchmove', (e) => {
-        if (isDragging && e.touches.length === 1) {
-            const touch = e.touches[0];
-            mouseX = touch.clientX;
-            mouseY = touch.clientY;
-        }
-    }, { passive: false });
+        document.removeEventListener('mousemove', this.handleMove.bind(this));
+        document.removeEventListener('mouseup', this.handleEnd.bind(this));
+        document.removeEventListener('touchmove', this.handleMove.bind(this));
+        document.removeEventListener('touchend', this.handleEnd.bind(this));
+    }
+}
 
-    document.addEventListener('touchend', () => {
-        clearTimeout(holdTimeout);
-        if (isDragging) {
-            isDragging = false;
-            cancelAnimationFrame(rafId);
-            hideDeleteArea();
-        }
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    new DraggableButton('draggable-github');
+});
+
+window.addEventListener('resize', () => {
+    const button = document.getElementById('draggable-github');
+    if (!button) return;
+
+    const rect = button.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    let newX = rect.left;
+    let newY = rect.top;
+
+    if (rect.right > viewportWidth) {
+        newX = viewportWidth - rect.width;
+    }
+    if (rect.bottom > viewportHeight) {
+        newY = viewportHeight - rect.height;
+    }
+
+    if (newX !== rect.left || newY !== rect.top) {
+        button.style.left = Math.max(0, newX) + 'px';
+        button.style.top = Math.max(0, newY) + 'px';
+        button.style.right = 'auto';
+        button.style.bottom = 'auto';
+    }
 });

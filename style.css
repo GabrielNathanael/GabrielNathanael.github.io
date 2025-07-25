@@ -126,3 +126,17 @@ html.dark .project-swiper-pagination .swiper-pagination-progressbar-fill,
 html.dark .certificate-swiper-pagination .swiper-pagination-progressbar-fill {
   background: #fafafa !important;
 }
+
+.dragging {
+  opacity: 0.7 !important;
+  z-index: 9999 !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
