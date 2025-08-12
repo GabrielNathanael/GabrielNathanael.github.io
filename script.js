@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const projects = [
     {
-        title: "Task Manager Web App with Vite React, Laravel, and Firebase Authentication",
+        title: "Task Manager Web App with Vite ReactJS, Laravel, and Firebase Authentication",
         image: "/images/project5.jpg",
         link: "https://github.com/GabrielNathanael/Task-Manager-Fullstack-App",
         description: "A fullstack task management app featuring a dashboard, project grouping, CRUD, authentication, and interactive UI. Tasks are grouped by project, and task progress are available per project.",
