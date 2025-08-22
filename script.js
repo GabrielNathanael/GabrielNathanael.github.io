@@ -181,6 +181,21 @@ const projects = [
         orientation: "landscape"
     },
     {
+        title: "Fullstack Blog Website with Next.js and Prisma",
+        image: "/images/project6.jpg",
+        link: "https://github.com/GabrielNathanael/nextjs-fullstack-blog-app",
+        description: "A fullstack blog application built entirely with Next.js as both frontend and backend framework. It features content management, and a clean responsive design. Data is managed with Prisma as ORM.",
+        tools: [
+            "Next.js",
+            "Prisma ORM",
+            "TypeScript",
+            "Tailwind CSS",
+            "PostgreSQL",
+        ],
+        year: 2025,
+        orientation: "landscape"
+    },
+    {
         title: "(Group Project) Laravel Web App using Leaflet JS and Tripay API",
         image: "/images/project3.jpg",
         link: "https://github.com/chiknwy/I_Ben-Project",
