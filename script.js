@@ -95,25 +95,25 @@ mobileNavLinks.forEach(link => {
 });
 
 const certificates = [
-    { title: "Azure AI Fundamentals", issuer: "Microsoft", year: 2024, image: "/images/certificate7.jpg" },
-    { title: "Skills Boost Arcade Certification Zone July 2025", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate18.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17112694" },
-    { title: "Level 3: Advanced App Operations", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate14.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17075395" },
-    { title: "Level 2: Modern Application Deployment", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate13.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17063870" },
-    { title: "Level 1: Core Infrastructure and Security", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate9.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17032804" },
-    { title: "Skills Boost Arcade Base Camp July 2025", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate10.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17021616" },
-    { title: "Skills Boost Arcade Trivia July 2025 Week 1", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate15.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17075705" },
-    { title: "Skills Boost Arcade Trivia July 2025 Week 2", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate19.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17202758" },
-    { title: "Skills Boost Arcade Trivia July 2025 Week 3", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate16.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17094322" },
-    { title: "Skills Boost Arcade Trivia July 2025 Week 4", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate17.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17097630" },
-    { title: "HSK 1", issuer: "Balingkang Confucius Institute", year: 2024, image: "/images/certificate8.jpg" },
-    { title: "Web Development", issuer: "Sololearn", year: 2025, image: "/images/certificate12.jpg" },
-    { title: "Sololearn Introduction to JavaScript", issuer: "Sololearn", year: 2025, image: "/images/certificate12.jpg" },
-    { title: "Sololearn Introduction to Python", issuer: "Sololearn", year: 2024, image: "/images/certificate4.jpg" },
-    { title: "Sololearn Introduction to C++", issuer: "Sololearn", year: 2023, image: "/images/certificate3.jpg" },
-    { title: "Sololearn Introduction to HTML", issuer: "Sololearn", year: 2023, image: "/images/certificate1.jpg" },
-    { title: "Sololearn Introduction to CSS", issuer: "Sololearn", year: 2023, image: "/images/certificate2.jpg" },
-    { title: "Sololearn Introduction to C", issuer: "Sololearn", year: 2024, image: "/images/certificate5.jpg" },
-    { title: "Sololearn Introduction to C#", issuer: "Sololearn", year: 2024, image: "/images/certificate6.jpg" }
+    { title: "Azure AI Fundamentals", issuer: "Microsoft", year: 2024, image: "/images/certificate7.webp" },
+    { title: "Skills Boost Arcade Certification Zone July 2025", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate18.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17112694" },
+    { title: "Level 3: Advanced App Operations", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate14.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17075395" },
+    { title: "Level 2: Modern Application Deployment", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate13.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17063870" },
+    { title: "Level 1: Core Infrastructure and Security", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate9.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17032804" },
+    { title: "Skills Boost Arcade Base Camp July 2025", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate10.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17021616" },
+    { title: "Skills Boost Arcade Trivia July 2025 Week 1", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate15.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17075705" },
+    { title: "Skills Boost Arcade Trivia July 2025 Week 2", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate19.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17202758" },
+    { title: "Skills Boost Arcade Trivia July 2025 Week 3", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate16.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17094322" },
+    { title: "Skills Boost Arcade Trivia July 2025 Week 4", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate17.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17097630" },
+    { title: "HSK 1", issuer: "Balingkang Confucius Institute", year: 2024, image: "/images/certificate8.webp" },
+    { title: "Web Development", issuer: "Sololearn", year: 2025, image: "/images/certificate12.webp" },
+    { title: "Sololearn Introduction to JavaScript", issuer: "Sololearn", year: 2025, image: "/images/certificate12.webp" },
+    { title: "Sololearn Introduction to Python", issuer: "Sololearn", year: 2024, image: "/images/certificate4.webp" },
+    { title: "Sololearn Introduction to C++", issuer: "Sololearn", year: 2023, image: "/images/certificate3.webp" },
+    { title: "Sololearn Introduction to HTML", issuer: "Sololearn", year: 2023, image: "/images/certificate1.webp" },
+    { title: "Sololearn Introduction to CSS", issuer: "Sololearn", year: 2023, image: "/images/certificate2.webp" },
+    { title: "Sololearn Introduction to C", issuer: "Sololearn", year: 2024, image: "/images/certificate5.webp" },
+    { title: "Sololearn Introduction to C#", issuer: "Sololearn", year: 2024, image: "/images/certificate6.webp" }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const projects = [
     {
         title: "Task Manager Web App with Vite ReactJS, Laravel, and Firebase Authentication",
-        image: "/images/project5.jpg",
+        image: "/images/project5.webp",
         link: "https://github.com/GabrielNathanael/Task-Manager-Fullstack-App",
         description: "A fullstack task management app featuring a dashboard, project grouping, CRUD, authentication, and interactive UI. Tasks are grouped by project, and task progress are available per project.",
         tools: [
@@ -182,7 +182,7 @@ const projects = [
     },
     {
         title: "Fullstack Blog Website with Next.js and Prisma",
-        image: "/images/project6.jpg",
+        image: "/images/project6.webp",
         link: "https://github.com/GabrielNathanael/nextjs-fullstack-blog-app",
         description: "A fullstack blog application built entirely with Next.js as both frontend and backend framework. It features content management, and a clean responsive design. Data is managed with Prisma as ORM.",
         tools: [
@@ -197,7 +197,7 @@ const projects = [
     },
     {
         title: "(Group Project) Laravel Web App using Leaflet JS and Tripay API",
-        image: "/images/project3.jpg",
+        image: "/images/project3.webp",
         link: "https://github.com/chiknwy/I_Ben-Project",
         description: "A group project web app displaying maps using Leaflet and supporting payments via Tripay API. \n\nI worked as the backend developer in charge of configuring the Tripay payment integration.",
         tools: [
@@ -211,8 +211,8 @@ const projects = [
         orientation: "portrait"
     },
     {
-        title: "Flappy Bird with NEAT (NeuroEvolution of Augmenting Topologies)",
-        image: "/images/project2.jpg",
+        title: "AI Flappy Bird with NEAT (NeuroEvolution of Augmenting Topologies)",
+        image: "/images/project2.webp",
         link: "https://github.com/GabrielNathanael/AI-FlappyBird",
         description: "An implementation of Flappy Bird controlled by AI using the NEAT (NeuroEvolution of Augmenting Topologies) algorithm.",
         tools: [
@@ -226,7 +226,7 @@ const projects = [
     },
     {
         title: "Laravel Web App for Statistic using TailwindCSS ",
-        image: "/images/project1.jpg",
+        image: "/images/project1.webp",
         link: "https://github.com/GabrielNathanael/statistika-web",
         description: "An interactive web app for calculating statistical data such as mean, median, mode, and variance from user input.",
         tools: [
@@ -238,8 +238,21 @@ const projects = [
         orientation: "landscape"
     },
     {
+        title: "Interactive Login Game — Catch Falling Characters to Login",
+        image: "/images/project7.webp",
+        link: "https://github.com/GabrielNathanael/falling-chars-login",
+        description: "A creative login interface where users must catch falling characters with a paddle to populate username and password fields. It blends gameplay and UI interaction in a fun authentication experience.",
+        tools: [
+            "HTML5",
+            "CSS3 / Tailwind",
+            "JavaScript (Vanilla)"
+        ],
+        year: 2025,
+        orientation: "landscape"
+    },
+    {
         title: "Draw Sketch with Turtle and OpenCV",
-        image: "/images/project4.jpg",
+        image: "/images/project4.webp",
         link: "https://github.com/GabrielNathanael/sketch-draw-turtle-opencv",
         description: "A program that reads sketch images using OpenCV and translates them into visual turtle commands in Python.",
         tools: [
