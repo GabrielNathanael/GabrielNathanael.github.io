@@ -95,76 +95,36 @@ mobileNavLinks.forEach(link => {
 });
 
 const certificates = [
-    { title: "Azure AI Fundamentals", issuer: "Microsoft", year: 2024, image: "/images/certificate7.jpg" },
-    { title: "Skills Boost Arcade Certification Zone July 2025", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate18.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17112694" },
-    { title: "Level 3: Advanced App Operations", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate14.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17075395" },
-    { title: "Level 2: Modern Application Deployment", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate13.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17063870" },
-    { title: "Level 1: Core Infrastructure and Security", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate9.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17032804" },
-    { title: "Skills Boost Arcade Base Camp July 2025", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate10.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17021616" },
-    { title: "Skills Boost Arcade Trivia July 2025 Week 1", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate15.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17075705" },
-    { title: "Skills Boost Arcade Trivia July 2025 Week 2", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate19.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17202758" },
-    { title: "Skills Boost Arcade Trivia July 2025 Week 3", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate16.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17094322" },
-    { title: "Skills Boost Arcade Trivia July 2025 Week 4", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate17.png", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17097630" },
-    { title: "HSK 1", issuer: "Balingkang Confucius Institute", year: 2024, image: "/images/certificate8.jpg" },
-    { title: "Web Development", issuer: "Sololearn", year: 2025, image: "/images/certificate12.jpg" },
-    { title: "Sololearn Introduction to JavaScript", issuer: "Sololearn", year: 2025, image: "/images/certificate12.jpg" },
-    { title: "Sololearn Introduction to Python", issuer: "Sololearn", year: 2024, image: "/images/certificate4.jpg" },
-    { title: "Sololearn Introduction to C++", issuer: "Sololearn", year: 2023, image: "/images/certificate3.jpg" },
-    { title: "Sololearn Introduction to HTML", issuer: "Sololearn", year: 2023, image: "/images/certificate1.jpg" },
-    { title: "Sololearn Introduction to CSS", issuer: "Sololearn", year: 2023, image: "/images/certificate2.jpg" },
-    { title: "Sololearn Introduction to C", issuer: "Sololearn", year: 2024, image: "/images/certificate5.jpg" },
-    { title: "Sololearn Introduction to C#", issuer: "Sololearn", year: 2024, image: "/images/certificate6.jpg" }
+    { title: "Azure AI Fundamentals", issuer: "Microsoft", year: 2024, image: "/images/certificate7.webp" },
+    { title: "Skills Boost Arcade Certification Zone July 2025", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate18.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17112694" },
+    { title: "Level 3: Advanced App Operations", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate14.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17075395" },
+    { title: "Level 2: Modern Application Deployment", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate13.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17063870" },
+    { title: "Level 1: Core Infrastructure and Security", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate9.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17032804" },
+    { title: "Skills Boost Arcade Base Camp July 2025", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate10.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17021616" },
+    { title: "Skills Boost Arcade Trivia July 2025 Week 1", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate15.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17075705" },
+    { title: "Skills Boost Arcade Trivia July 2025 Week 2", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate19.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17202758" },
+    { title: "Skills Boost Arcade Trivia July 2025 Week 3", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate16.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17094322" },
+    { title: "Skills Boost Arcade Trivia July 2025 Week 4", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate17.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17097630" },
+    { title: "HSK 1", issuer: "Balingkang Confucius Institute", year: 2024, image: "/images/certificate8.webp" },
+    { title: "Web Development", issuer: "Sololearn", year: 2025, image: "/images/certificate12.webp" },
+    { title: "Sololearn Introduction to JavaScript", issuer: "Sololearn", year: 2025, image: "/images/certificate12.webp" },
+    { title: "Sololearn Introduction to Python", issuer: "Sololearn", year: 2024, image: "/images/certificate4.webp" },
+    { title: "Sololearn Introduction to C++", issuer: "Sololearn", year: 2023, image: "/images/certificate3.webp" },
+    { title: "Sololearn Introduction to HTML", issuer: "Sololearn", year: 2023, image: "/images/certificate1.webp" },
+    { title: "Sololearn Introduction to CSS", issuer: "Sololearn", year: 2023, image: "/images/certificate2.webp" },
+    { title: "Sololearn Introduction to C", issuer: "Sololearn", year: 2024, image: "/images/certificate5.webp" },
+    { title: "Sololearn Introduction to C#", issuer: "Sololearn", year: 2024, image: "/images/certificate6.webp" }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    const certificateSwiperWrapper = document.querySelector('.certificate-swiper-wrapper');
 
-    certificates.forEach((cert, idx) => {
-        const slide = document.createElement('div');
-        slide.className = 'swiper-slide';
-        if (cert.link) {
-            slide.classList.add('transition-transform', 'duration-200', 'hover:scale-105', 'cursor-pointer');
-        }
-        slide.innerHTML = `
-            <div class="bg-gray-100 dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden">
-                <img src="${cert.image}" alt="${cert.title}" class="w-full h-56 object-contain bg-white rounded-t-lg">
-                <div class="p-6">
-                    <h3 class="text-[15px] font-semibold dark:text-white">${cert.title}</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">${cert.issuer} &bull; ${cert.year}</p>
-                </div>
-            </div>
-        `;
 
-        if (cert.link) {
-            slide.addEventListener('click', () => {
-                window.open(cert.link, '_blank');
-            });
-        }
-        certificateSwiperWrapper.appendChild(slide);
-    });
-
-    new Swiper('.certificate-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 15,
-        breakpoints: {
-            640: { slidesPerView: 2, spaceBetween: 15 },
-            1024: { slidesPerView: 3, spaceBetween: 15 }
-        },
-        navigation: {
-            nextEl: '.certificate-button-next',
-            prevEl: '.certificate-button-prev',
-        },
-        pagination: {
-            el: '.certificate-swiper-pagination',
-            type: 'progressbar',
-        }
-    });
 });
 
 const projects = [
     {
         title: "Task Manager Web App with Vite ReactJS, Laravel, and Firebase Authentication",
-        image: "/images/project5.jpg",
+        image: "/images/project5.webp",
         link: "https://github.com/GabrielNathanael/Task-Manager-Fullstack-App",
         description: "A fullstack task management app featuring a dashboard, project grouping, CRUD, authentication, and interactive UI. Tasks are grouped by project, and task progress are available per project.",
         tools: [
@@ -182,7 +142,7 @@ const projects = [
     },
     {
         title: "Fullstack Blog Website with Next.js and Prisma",
-        image: "/images/project6.jpg",
+        image: "/images/project6.webp",
         link: "https://github.com/GabrielNathanael/nextjs-fullstack-blog-app",
         description: "A fullstack blog application built entirely with Next.js as both frontend and backend framework. It features content management, and a clean responsive design. Data is managed with Prisma as ORM.",
         tools: [
@@ -197,7 +157,7 @@ const projects = [
     },
     {
         title: "(Group Project) Laravel Web App using Leaflet JS and Tripay API",
-        image: "/images/project3.jpg",
+        image: "/images/project3.webp",
         link: "https://github.com/chiknwy/I_Ben-Project",
         description: "A group project web app displaying maps using Leaflet and supporting payments via Tripay API. \n\nI worked as the backend developer in charge of configuring the Tripay payment integration.",
         tools: [
@@ -212,7 +172,7 @@ const projects = [
     },
     {
         title: "Flappy Bird with NEAT (NeuroEvolution of Augmenting Topologies)",
-        image: "/images/project2.jpg",
+        image: "/images/project2.webp",
         link: "https://github.com/GabrielNathanael/AI-FlappyBird",
         description: "An implementation of Flappy Bird controlled by AI using the NEAT (NeuroEvolution of Augmenting Topologies) algorithm.",
         tools: [
@@ -226,7 +186,7 @@ const projects = [
     },
     {
         title: "Laravel Web App for Statistic using TailwindCSS ",
-        image: "/images/project1.jpg",
+        image: "/images/project1.webp",
         link: "https://github.com/GabrielNathanael/statistika-web",
         description: "An interactive web app for calculating statistical data such as mean, median, mode, and variance from user input.",
         tools: [
@@ -239,7 +199,7 @@ const projects = [
     },
     {
         title: "Draw Sketch with Turtle and OpenCV",
-        image: "/images/project4.jpg",
+        image: "/images/project4.webp",
         link: "https://github.com/GabrielNathanael/sketch-draw-turtle-opencv",
         description: "A program that reads sketch images using OpenCV and translates them into visual turtle commands in Python.",
         tools: [
@@ -255,41 +215,6 @@ const projects = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    const projectSwiperWrapper = document.querySelector('.project-swiper-wrapper');
-
-    projects.forEach((project, idx) => {
-        const slide = document.createElement('div');
-        slide.className = 'swiper-slide';
-        slide.innerHTML = `
-            <div role="button" tabindex="0" class="block project-card transition-transform duration-200 md:hover:scale-105 cursor-pointer">
-                <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden h-90">
-                    <img src="${project.image}" alt="${project.title}" class="w-full h-56 object-fit">
-                    <div class="p-6 pb-4">
-                        <h3 class="text-base font-semibold dark:text-white">${project.title}</h3>
-                    </div>
-                </div>
-            </div>
-        `;
-        slide.setAttribute('data-index', idx);
-        projectSwiperWrapper.appendChild(slide);
-    });
-
-    new Swiper('.project-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 15,
-        breakpoints: {
-            640: { slidesPerView: 2, spaceBetween: 15 },
-            1024: { slidesPerView: 3, spaceBetween: 15 }
-        },
-        navigation: {
-            nextEl: '.project-button-next',
-            prevEl: '.project-button-prev',
-        },
-        pagination: {
-            el: '.project-swiper-pagination',
-            type: 'progressbar',
-        }
-    });
 
     const modal = document.getElementById('project-modal');
     const closeModal = document.getElementById('close-modal');
@@ -304,63 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return window.matchMedia('(min-width: 768px)').matches;
     }
 
-    document.querySelectorAll('.project-swiper-wrapper .swiper-slide').forEach((slide) => {
-        slide.addEventListener('click', (e) => {
-            const idx = slide.getAttribute('data-index');
-            const project = projects[idx];
-            const modalContent = document.getElementById('modal-content');
-            const modalFlex = document.getElementById('modal-flex');
-            const modalImageDiv = document.getElementById('modal-image-container');
-            const modalDetail = document.getElementById('modal-detail');
-            modalContent.classList.remove('md:max-w-2xl', 'md:max-w-3xl');
-            modalFlex.classList.remove('flex-row', 'flex-col');
-            modalImageDiv.classList.remove('md:w-1/2', 'aspect-[3/4]', 'w-full', 'mb-6', 'md:mb-0');
-            modalDetail.classList.remove('md:w-1/2', 'w-full');
-            modalImage.classList.remove('object-contain', 'object-cover', 'max-h-[60vh]');
-
-            if (isDesktopOrTablet()) {
-                modalImage.src = project.image;
-                modalImage.alt = project.title;
-                if (project.orientation === 'portrait') {
-                    modalContent.classList.add('md:max-w-4xl');
-                    modalFlex.classList.add('flex-row');
-                    modalImageDiv.classList.add('md:w-1/2', 'aspect-[3/4]');
-                    modalDetail.classList.add('md:w-1/2');
-                    modalImage.classList.add('object-contain');
-                } else {
-                    modalContent.classList.add('md:max-w-3xl');
-                    modalFlex.classList.add('flex-col');
-                    modalImageDiv.classList.add('w-full', 'mb-6');
-                    modalDetail.classList.add('w-full');
-                    modalImage.classList.add('object-contain', 'max-h-[60vh]');
-                }
-                modalImageDiv.classList.remove('hidden');
-            } else {
-                modalImage.src = '';
-                modalImage.alt = '';
-                modalImageDiv.classList.add('hidden');
-            }
-            modalDetail.innerHTML = `
-              <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-gray-900 dark:text-white">${project.title}</h3>
-              <p class="mb-2 md:mb-4 text-gray-700 dark:text-gray-200"> ${(project.description || '').replace(/\n/g, '<br>')} </p>
-              <div class="mb-2 md:mb-4 flex flex-wrap gap-2">
-                <span class="font-semibold text-gray-900 dark:text-white">Tools:</span>
-                ${project.tools ? project.tools.map(t => `<span class=\"inline-block bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded px-2 py-1 mr-1 mb-1 text-xs\">${t}</span>`).join('') : ''}
-              </div>
-              <a id="modal-link" href="${project.link}" target="_blank" rel="noopener" data-modal-link
-                class="inline-flex items-center gap-2 text-violet-500 hover:text-violet-400 dark:hover:text-violet-300 font-semibold transition-all duration-200 no-underline hover:scale-105 hover:font-bold">
-                <i class="fab fa-github"></i> Open in GitHub
-              </a>
-            `;
-
-            const modalLink = document.getElementById('modal-link');
-            if (modalLink) {
-                modalLink.onclick = (ev) => { ev.stopPropagation(); };
-            }
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        });
-    });
     closeModal.addEventListener('click', () => {
         modal.classList.remove('flex');
         modal.classList.add('hidden');
@@ -750,3 +618,284 @@ window.addEventListener('resize', () => {
         button.style.bottom = 'auto';
     }
 });
+
+
+
+// Init slider saat DOM ready
+document.addEventListener("DOMContentLoaded", () => {
+    initSlider({
+        trackId: "project-track",
+        prevId: "proj-prev",
+        nextId: "proj-next",
+        paginationId: "project-pagination",
+        items: projects,
+        renderItem: (p) => `
+            <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden">
+                <img src="${p.image}" alt="${p.title}" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-base font-semibold dark:text-white">${p.title}</h3>
+                </div>
+            </div>
+        `
+    });
+
+    initSlider({
+        trackId: "certificate-track",
+        prevId: "cert-prev",
+        nextId: "cert-next",
+        paginationId: "certificate-pagination",
+        items: certificates,
+        renderItem: (c) => `
+            <div class="bg-gray-100 dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden">
+                <img src="${c.image}" alt="${c.title}" class="w-full h-56 object-contain bg-white rounded-t-lg">
+                <div class="p-6">
+                    <h3 class="text-[15px] font-semibold dark:text-white">${c.title}</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">${c.issuer} • ${c.year}</p>
+                </div>
+            </div>
+        `
+    });
+});
+
+// === PATCH START ===
+
+// 1) Helper: buka modal project (pakai elemen modal yang udah ada di HTML lo)
+function showProjectModal(project) {
+    const modal = document.getElementById('project-modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalFlex = document.getElementById('modal-flex');
+    const modalImageDiv = document.getElementById('modal-image-container');
+    const modalDetail = document.getElementById('modal-detail');
+    const modalImage = document.getElementById('modal-image');
+
+    function isDesktopOrTablet() {
+        return window.matchMedia('(min-width: 768px)').matches;
+    }
+
+    // reset kelas layout
+    modalContent.classList.remove('md:max-w-2xl', 'md:max-w-3xl', 'md:max-w-4xl');
+    modalFlex.classList.remove('flex-row', 'flex-col');
+    modalImageDiv.classList.remove('md:w-1/2', 'aspect-[3/4]', 'w-full', 'mb-6', 'md:mb-0');
+    modalDetail.classList.remove('md:w-1/2', 'w-full');
+    modalImage.classList.remove('object-contain', 'object-cover', 'max-h-[60vh]');
+
+    if (isDesktopOrTablet()) {
+        modalImage.src = project.image;
+        modalImage.alt = project.title;
+        if (project.orientation === 'portrait') {
+            modalContent.classList.add('md:max-w-4xl');
+            modalFlex.classList.add('flex-row');
+            modalImageDiv.classList.add('md:w-1/2', 'aspect-[3/4]');
+            modalDetail.classList.add('md:w-1/2');
+            modalImage.classList.add('object-contain');
+        } else {
+            modalContent.classList.add('md:max-w-3xl');
+            modalFlex.classList.add('flex-col');
+            modalImageDiv.classList.add('w-full', 'mb-6');
+            modalDetail.classList.add('w-full');
+            modalImage.classList.add('object-contain', 'max-h-[60vh]');
+        }
+        modalImageDiv.classList.remove('hidden');
+    } else {
+        modalImage.src = '';
+        modalImage.alt = '';
+        modalImageDiv.classList.add('hidden');
+    }
+
+    modalDetail.innerHTML = `
+    <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-gray-900 dark:text-white">${project.title}</h3>
+    <p class="mb-2 md:mb-4 text-gray-700 dark:text-gray-200">${(project.description || '').replace(/\n/g, '<br>')}</p>
+    <div class="mb-2 md:mb-4 flex flex-wrap gap-2">
+      <span class="font-semibold text-gray-900 dark:text-white">Tools:</span>
+      ${project.tools ? project.tools.map(t => `<span class="inline-block bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded px-2 py-1 mr-1 mb-1 text-xs">${t}</span>`).join('') : ''}
+    </div>
+    <a id="modal-link" href="${project.link}" target="_blank" rel="noopener" data-modal-link
+      class="inline-flex items-center gap-2 text-violet-500 hover:text-violet-400 dark:hover:text-violet-300 font-semibold transition-all duration-200 no-underline hover:scale-105 hover:font-bold">
+      <i class="fab fa-github"></i> Open in GitHub
+    </a>
+  `;
+    const a = document.getElementById('modal-link');
+    if (a) a.onclick = ev => ev.stopPropagation();
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+}
+
+// 2) Slider baru dengan paging rapih, swipe mobile & drag desktop
+function initSlider({ trackId, prevId, nextId, paginationId, items, renderItem, onItemClick }) {
+    const track = document.getElementById(trackId);
+    const wrapper = track.parentElement; // viewport
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    const pagination = document.getElementById(paginationId);
+
+    // layout: wrapper sebagai viewport
+    wrapper.classList.add('relative', 'overflow-hidden');
+    // track pakai gap (jangan pakai padding di slide, biar width 3x pas)
+    track.classList.add('flex', 'transition-transform', 'duration-500', 'ease-out', 'gap-4');
+
+    // tombol ditaruh di luar area card (tidak menimpa)
+    prevBtn.classList.add('absolute', 'top-1/2', '-translate-y-1/2', '-left-12'); // geser keluar
+    nextBtn.classList.add('absolute', 'top-1/2', '-translate-y-1/2', '-right-12');
+
+    let perView = getPerView();
+    let currentPage = 0;
+
+    // gesture
+    let isDragging = false;
+    let startX = 0;
+    let lastTranslate = 0; // posisi terakhir (px)
+    const dragThreshold = 50;
+
+    function getPerView() {
+        return window.innerWidth < 640 ? 1 : 3;
+    }
+
+    function pageCount() {
+        return Math.ceil(items.length / perView);
+    }
+
+    function renderSlides() {
+        track.innerHTML = '';
+        items.forEach((item, idx) => {
+            const slide = document.createElement('div');
+            // 1 page = 1 viewport; 3 card = 3 * basis-1/3 dengan gap pada track
+            slide.className = 'shrink-0 grow-0 basis-full sm:basis-1/3';
+            slide.innerHTML = renderItem(item);
+
+            // klik buka modal, tapi jangan tembak kalau barusan drag
+            let moved = false;
+            slide.addEventListener('mousedown', () => (moved = false), { passive: true });
+            slide.addEventListener('mousemove', () => (moved = true), { passive: true });
+            slide.addEventListener('touchstart', () => (moved = false), { passive: true });
+            slide.addEventListener('touchmove', () => (moved = true), { passive: true });
+
+            slide.addEventListener('click', (e) => {
+                if (moved) return;
+                if (typeof onItemClick === 'function') onItemClick(item, idx, e);
+            });
+
+            track.appendChild(slide);
+        });
+    }
+
+    function snapTo(page) {
+        const max = pageCount() - 1;
+        currentPage = Math.max(0, Math.min(page, max));
+        const viewportWidth = wrapper.clientWidth;         // geser tepat 1 viewport
+        const offset = -currentPage * viewportWidth;
+        track.style.transform = `translateX(${offset}px)`;
+        lastTranslate = offset;
+        updatePagination();
+    }
+
+    function updatePagination() {
+        pagination.innerHTML = '';
+        const total = pageCount();
+        for (let i = 0; i < total; i++) {
+            const b = document.createElement('button');
+            b.className = 'mx-1';
+            b.innerHTML = `<i class="fa-solid fa-star ${i === currentPage ? 'text-yellow-400' : 'text-gray-400'}"></i>`;
+            b.addEventListener('click', () => snapTo(i));
+            pagination.appendChild(b);
+        }
+    }
+
+    // tombol nav
+    prevBtn.addEventListener('click', () => snapTo(currentPage - 1));
+    nextBtn.addEventListener('click', () => snapTo(currentPage + 1));
+
+    // swipe mobile
+    track.addEventListener('touchstart', onStart, { passive: true });
+    track.addEventListener('touchmove', onMove, { passive: true });
+    track.addEventListener('touchend', onEnd);
+
+    // drag desktop (hold + drag)
+    track.addEventListener('mousedown', onStart);
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onEnd);
+
+    function getX(e) {
+        return e.touches ? e.touches[0].clientX : e.clientX;
+    }
+
+    function onStart(e) {
+        isDragging = true;
+        startX = getX(e);
+        track.style.cursor = 'grabbing';
+    }
+
+    function onMove(e) {
+        if (!isDragging) return;
+        const delta = getX(e) - startX;
+        track.style.transform = `translateX(${lastTranslate + delta}px)`; // follow finger/mouse
+    }
+
+    function onEnd(e) {
+        if (!isDragging) return;
+        const delta = getX(e) - startX;
+        isDragging = false;
+        track.style.cursor = '';
+
+        if (Math.abs(delta) > dragThreshold) {
+            if (delta < 0) snapTo(currentPage + 1);
+            else snapTo(currentPage - 1);
+        } else {
+            snapTo(currentPage); // snap balik
+        }
+    }
+
+    // responsif
+    window.addEventListener('resize', () => {
+        const old = perView;
+        perView = getPerView();
+        // kalau mode berubah (1 ↔ 3), jaga index tetap valid
+        const total = pageCount();
+        if (currentPage >= total) currentPage = Math.max(0, total - 1);
+        snapTo(currentPage);
+    });
+
+    renderSlides();
+    snapTo(0);
+}
+
+// 3) Inisialisasi
+document.addEventListener('DOMContentLoaded', () => {
+    // PROJECTS
+    initSlider({
+        trackId: 'project-track',
+        prevId: 'proj-prev',
+        nextId: 'proj-next',
+        paginationId: 'project-pagination',
+        items: projects,
+        renderItem: (p) => `
+      <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden">
+        <img src="${p.image}" alt="${p.title}" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-base font-semibold dark:text-white">${p.title}</h3>
+        </div>
+      </div>
+    `,
+        onItemClick: (p) => showProjectModal(p)
+    });
+
+    // CERTIFICATES
+    initSlider({
+        trackId: 'certificate-track',
+        prevId: 'cert-prev',
+        nextId: 'cert-next',
+        paginationId: 'certificate-pagination',
+        items: certificates,
+        renderItem: (c) => `
+      <div class="bg-gray-100 dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden">
+        <img src="${c.image}" alt="${c.title}" class="w-full h-56 object-contain bg-white rounded-t-lg">
+        <div class="p-6">
+          <h3 class="text-[15px] font-semibold dark:text-white">${c.title}</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">${c.issuer} • ${c.year}</p>
+        </div>
+      </div>
+    `,
+        onItemClick: (c) => { if (c.link) window.open(c.link, '_blank', 'noopener'); }
+    });
+});
+// === PATCH END ===

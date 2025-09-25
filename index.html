@@ -29,7 +29,7 @@
     <meta property="og:title" content="Gabriel Nathanael Purba | Fullstack Developer & Cloud Enthusiast from Bali">
     <meta property="og:description"
         content="Portfolio Gabriel Nathanael Purba - Fullstack Web Developer dan Cloud Enthusiast dari Bali, Indonesia. Spesialis React.js, Next.js, Laravel, AWS, dan Cybersecurity.">
-    <meta property="og:image" content="https://gabrielnathanaelp.vercel.app/images/profile2.jpg">
+    <meta property="og:image" content="https://gabrielnathanaelp.vercel.app/images/profile2.webp">
     <meta property="og:url" content="https://gabrielnathanaelp.vercel.app/">
 
     <!-- Twitter Card -->
@@ -37,7 +37,7 @@
     <meta name="twitter:title" content="Gabriel Nathanael Purba | Fullstack Developer & Cloud Enthusiast from Bali">
     <meta name="twitter:description"
         content="Portfolio Gabriel Nathanael Purba - Fullstack Web Developer dan Cloud Enthusiast dari Bali, Indonesia. Spesialis React.js, Next.js, Laravel, AWS, dan Cybersecurity.">
-    <meta name="twitter:image" content="https://gabrielnathanaelp.vercel.app/images/profile2.jpg">
+    <meta name="twitter:image" content="https://gabrielnathanaelp.vercel.app/images/profile2.webp">
 
     <!-- Geographic Meta Tags -->
     <meta name="geo.region" content="ID-BA">
@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#8b5cf6">
 
     <!-- Favicon -->
-    <link rel="icon" href="images/avatars.png" type="image/png">
+    <link rel="icon" href="images/avatars.webp" type="image/png">
 
     <!-- Fonts & CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,10 +66,6 @@
             darkMode: 'class',
         };
     </script>
-
-    <!-- Swiper -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>
 
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -87,7 +83,7 @@
         "@type": "Person",
         "name": "Gabriel Nathanael Purba",
         "url": "https://gabrielnathanaelp.vercel.app/",
-        "image": "https://gabrielnathanaelp.vercel.app/images/profile2.jpg",
+        "image": "https://gabrielnathanaelp.vercel.app/images/profile2.webp",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Denpasar",
@@ -122,6 +118,9 @@
         "nationality": "Indonesian"
         }
     </script>
+
+    <link rel="preload" as="image" href="/images/profile2.webp">
+
 </head>
 
 
@@ -133,7 +132,7 @@
                    cursor-pointer group transition-transform duration-150 
                    active:scale-95 hover:brightness-95 dark:hover:brightness-125">
                 <h1 class="text-2xl font-bold text-gray-900 dark:text-white flex items-center">
-                    <img src="images/avatars.png" alt="Gabriel Icon" class="w-[28px] h-[28px] mr-2">
+                    <img src="images/avatars.webp" alt="Gabriel Icon" class="w-[28px] h-[28px] mr-2">
                     Gabriel Nathanael
                 </h1>
             </a>
@@ -227,7 +226,7 @@
 
 
         <div class="relative z-10 text-center">
-            <img src="/images/profile2.jpg" alt="Gabriel Nathanael Purba Profile Picture"
+            <img src="/images/profile2.webp" alt="Gabriel Nathanael Purba Profile Picture"
                 class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover mx-auto mb-4 border-4 border-black dark:border-white" />
 
 
@@ -276,7 +275,7 @@
             <div class="max-w-4xl mx-auto mb-12">
                 <h3
                     class="text-2xl md:text-3xl font-semibold text-center mb-12 text-gray-900 dark:text-white font-manrope">
-                    Tech Journey
+                    My Tech Stack
                 </h3>
 
                 <div class="relative">
@@ -372,42 +371,40 @@
         </div>
     </section>
 
-
     <section id="projects" class="bg-gray-50 dark:bg-zinc-900 py-16 transition-colors duration-300 manrope-custom">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-8 dark:text-white">Personal Projects</h2>
 
-            <div class="relative max-w-screen-xl mx-auto pl-4 pr-4 md:pl-9 md:pr-9">
+            <!-- Slider Wrapper -->
+            <div class="relative max-w-screen-xl mx-auto pl-4 pr-4 md:pl-9 md:pr-9 overflow-hidden">
 
-                <div class="project-button-prev absolute top-1/2 -translate-y-1/2 -left-2 z-30
-                  hidden sm:flex w-10 h-10 items-center justify-center text-gray-700 dark:text-white
-                  hover:text-violet-500 active:text-violet-500 dark:hover:text-violet-400 dark:active:text-violet-400">
+                <!-- Track -->
+                <div id="project-track" class="flex transition-transform duration-500 ease-in-out">
+                    <!-- Slides via JS -->
+                </div>
+
+                <!-- Prev/Next -->
+                <button id="proj-prev"
+                    class="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-8 h-8">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" />
                     </svg>
-                </div>
-
-                <div class="project-button-next absolute top-1/2 -translate-y-1/2 -right-2 z-30
-                  hidden sm:flex w-10 h-10 items-center justify-center text-gray-700 dark:text-white
-                  hover:text-violet-500 active:text-violet-500 dark:hover:text-violet-400 dark:active:text-violet-400">
+                </button>
+                <button id="proj-next"
+                    class="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-8 h-8">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
                     </svg>
-                </div>
-
-                <div class="swiper project-swiper">
-                    <div class="swiper-wrapper project-swiper-wrapper">
-                        <!-- Slides via JS -->
-                    </div>
-                </div>
+                </button>
             </div>
 
+            <!-- Pagination -->
             <div class="mt-6 flex justify-center">
-                <div class="project-swiper-pagination"></div>
+                <div id="project-pagination" class="flex justify-center items-center gap-2 mt-4"></div>
             </div>
         </div>
     </section>
@@ -416,40 +413,40 @@
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-8 dark:text-white manrope-custom">Certificates</h2>
 
-            <div class="relative max-w-screen-xl mx-auto pl-4 pr-4 md:pl-9 md:pr-9">
+            <!-- Slider Wrapper -->
+            <div class="relative max-w-screen-xl mx-auto pl-4 pr-4 md:pl-9 md:pr-9 overflow-hidden">
 
-                <div class="certificate-button-prev absolute top-1/2 -translate-y-1/2 -left-2 z-30
-                  hidden sm:flex w-10 h-10 items-center justify-center text-gray-700 dark:text-white
-                  hover:text-violet-500 active:text-violet-500 dark:hover:text-violet-400 dark:active:text-violet-400">
+                <!-- Track -->
+                <div id="certificate-track" class="flex transition-transform duration-500 ease-in-out">
+                    <!-- Slides via JS -->
+                </div>
+
+                <!-- Prev/Next -->
+                <button id="cert-prev"
+                    class="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-8 h-8">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" />
                     </svg>
-                </div>
-
-                <div class="certificate-button-next absolute top-1/2 -translate-y-1/2 -right-2 z-30
-                  hidden sm:flex w-10 h-10 items-center justify-center text-gray-700 dark:text-white
-                  hover:text-violet-500 active:text-violet-500 dark:hover:text-violet-400 dark:active:text-violet-400">
+                </button>
+                <button id="cert-next"
+                    class="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-8 h-8">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
                     </svg>
-                </div>
-
-                <div class="swiper certificate-swiper">
-                    <div class="swiper-wrapper certificate-swiper-wrapper">
-                        <!-- Slides via JS -->
-                    </div>
-                </div>
+                </button>
             </div>
 
+            <!-- Pagination -->
             <div class="mt-6 flex justify-center">
-                <div class="certificate-swiper-pagination"></div>
+                <div id="certificate-pagination" class="flex justify-center items-center gap-2 mt-4"></div>
             </div>
         </div>
     </section>
+
     <section id="kontak" class="bg-gray-50 dark:bg-zinc-900 py-16">
         <div class="container mx-auto px-4 manrope-custom">
             <div class="max-w-5xl mx-auto">

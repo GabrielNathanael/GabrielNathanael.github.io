@@ -4,10 +4,38 @@ html {
   scroll-behavior: smooth;
 }
 
-.swiper-pagination-bullet-active {
-  background-color: #3b82f6 !important;
+/* ===== Swiper Bullets ===== */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #9ca3af; /* gray-400 */
+  opacity: 0.7;
+  margin: 0 4px;
+  border-radius: 9999px;
+  transition: all 0.2s;
 }
 
+.swiper-pagination-bullet-active {
+  width: 12px;
+  height: 12px;
+  background-color: #8b5cf6; /* violet-500 */
+  opacity: 1;
+}
+
+/* Container pagination supaya selalu center */
+.project-swiper-pagination,
+.certificate-swiper-pagination {
+  position: relative;
+  width: 100% !important;
+  max-width: none !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 0;
+  background: transparent !important;
+}
+
+/* ===== Font Custom ===== */
 .manrope-custom {
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
@@ -15,36 +43,13 @@ html {
   font-style: normal;
 }
 
-.project-swiper-pagination,
-.certificate-swiper-pagination {
-  background-color: rgba(107, 114, 128, 0.3);
-  display: inline-flex !important;
-  padding: 0.625rem 1.25rem;
-  border-radius: 12px;
-  gap: 0.625rem;
-  width: auto !important;
-  justify-content: center;
-  align-items: center;
-}
-
-.project-swiper-pagination .swiper-pagination-bullet,
-.certificate-swiper-pagination .swiper-pagination-bullet {
-  width: 0.625rem;
-  height: 0.625rem;
-  background-color: rgba(255, 255, 255, 0.3);
-  opacity: 1;
-  border-radius: 12px;
-}
-
-.project-swiper-pagination .swiper-pagination-bullet-active,
-.certificate-swiper-pagination .swiper-pagination-bullet-active {
-  background-color: white !important;
-}
-
+/* ===== Swiper Buttons (next/prev) ===== */
 .swiper-button-next::after,
 .swiper-button-prev::after {
   content: none !important;
 }
+
+/* ===== Toast ===== */
 #toast.show {
   display: block;
   opacity: 1;
@@ -55,78 +60,16 @@ html {
   transition: opacity 0.3s ease-out;
 }
 
-.swiper .project-swiper-pagination.swiper-pagination-progressbar,
-.swiper .certificate-swiper-pagination.swiper-pagination-progressbar,
-div.project-swiper-pagination.swiper-pagination-progressbar,
-div.certificate-swiper-pagination.swiper-pagination-progressbar {
-  background: rgba(107, 114, 128, 0.15) !important;
-  height: 8px !important;
-  border-radius: 8px !important;
-  width: 100% !important;
-  max-width: 250px !important;
-  margin: 0 auto !important;
-  position: relative !important;
-  overflow: hidden !important;
+/* ===== Dark Mode for Swiper Bullets ===== */
+html.dark .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-@media (min-width: 640px) {
-  .swiper .project-swiper-pagination.swiper-pagination-progressbar,
-  .swiper .certificate-swiper-pagination.swiper-pagination-progressbar,
-  div.project-swiper-pagination.swiper-pagination-progressbar,
-  div.certificate-swiper-pagination.swiper-pagination-progressbar {
-    max-width: 450px !important;
-    height: 10px !important;
-  }
+html.dark .swiper-pagination-bullet-active {
+  background-color: #a78bfa; /* violet-400 */
 }
 
-@media (min-width: 768px) {
-  .swiper .project-swiper-pagination.swiper-pagination-progressbar,
-  .swiper .certificate-swiper-pagination.swiper-pagination-progressbar,
-  div.project-swiper-pagination.swiper-pagination-progressbar,
-  div.certificate-swiper-pagination.swiper-pagination-progressbar {
-    max-width: 550px !important;
-    height: 12px !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  .swiper .project-swiper-pagination.swiper-pagination-progressbar,
-  .swiper .certificate-swiper-pagination.swiper-pagination-progressbar,
-  div.project-swiper-pagination.swiper-pagination-progressbar,
-  div.certificate-swiper-pagination.swiper-pagination-progressbar {
-    max-width: 400px !important;
-    height: 14px !important;
-  }
-}
-
-@media (min-width: 1280px) {
-  .swiper .project-swiper-pagination.swiper-pagination-progressbar,
-  .swiper .certificate-swiper-pagination.swiper-pagination-progressbar,
-  div.project-swiper-pagination.swiper-pagination-progressbar,
-  div.certificate-swiper-pagination.swiper-pagination-progressbar {
-    max-width: 450px !important;
-    height: 16px !important;
-  }
-}
-
-.project-swiper-pagination .swiper-pagination-progressbar-fill,
-.certificate-swiper-pagination .swiper-pagination-progressbar-fill,
-.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-  background: #09090b !important;
-  height: 100% !important;
-  border-radius: 8px !important;
-  transition: width 0.3s ease-in-out !important;
-}
-html.dark .project-swiper-pagination.swiper-pagination-progressbar,
-html.dark .certificate-swiper-pagination.swiper-pagination-progressbar {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-html.dark .project-swiper-pagination .swiper-pagination-progressbar-fill,
-html.dark .certificate-swiper-pagination .swiper-pagination-progressbar-fill {
-  background: #fafafa !important;
-}
-
+/* ===== Dragging state ===== */
 .dragging {
   opacity: 0.7 !important;
   z-index: 9999 !important;
@@ -134,6 +77,7 @@ html.dark .certificate-swiper-pagination .swiper-pagination-progressbar-fill {
   transform: none !important;
 }
 
+/* ===== Utility ===== */
 .no-select {
   -webkit-user-select: none;
   -moz-user-select: none;
