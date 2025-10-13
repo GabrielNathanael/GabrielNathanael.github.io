@@ -96,6 +96,8 @@ mobileNavLinks.forEach(link => {
 
 const certificates = [
     { title: "Azure AI Fundamentals", issuer: "Microsoft", year: 2024, image: "/images/certificate7.webp" },
+    { title: "Belajar Dasar-Dasar DevOps", issuer: "Dicoding Indonesia", year: 2025, image: "/images/certificate21.webp" },
+    { title: "Belajar Dasar Cloud dan Gen AI di AWS", issuer: "Dicoding Indonesia", year: 2025, image: "/images/certificate20.webp" },
     { title: "Skills Boost Arcade Certification Zone July 2025", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate18.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17112694" },
     { title: "Level 3: Advanced App Operations", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate14.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17075395" },
     { title: "Level 2: Modern Application Deployment", issuer: "Google Cloud Skills Boost", year: 2025, image: "/images/certificate13.webp", link: "https://www.cloudskillsboost.google/public_profiles/e7a04078-a982-40a5-b8d1-3fe55d4e1220/badges/17063870" },
@@ -122,15 +124,40 @@ document.addEventListener('DOMContentLoaded', () => {
     certificates.forEach((cert, idx) => {
         const slide = document.createElement('div');
         slide.className = 'swiper-slide';
+
+        // Add hover & cursor only if has link
         if (cert.link) {
-            slide.classList.add('transition-transform', 'duration-200', 'hover:scale-105', 'cursor-pointer');
+            slide.classList.add('cursor-pointer');
         }
+
         slide.innerHTML = `
-            <div class="bg-gray-100 dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden">
-                <img src="${cert.image}" alt="${cert.title}" class="w-full h-56 object-contain bg-white rounded-t-lg">
-                <div class="p-6">
-                    <h3 class="text-[15px] font-semibold dark:text-white">${cert.title}</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">${cert.issuer} &bull; ${cert.year}</p>
+            <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg overflow-hidden 
+                        transition-all duration-300 hover:shadow-2xl 
+                        ${cert.link ? 'hover:scale-[1.02]' : ''} h-full flex flex-col">
+                <!-- Image Container with 3:2 Aspect Ratio -->
+                <div class="w-full aspect-[4/3] bg-gray-50 dark:bg-neutral-700 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-cover bg-center blur-xl scale-110 opacity-25" 
+                        style="background-image: url('${cert.image}');"></div>
+                    <img src="${cert.image}" 
+                        alt="${cert.title}" 
+                        class="w-full h-full object-contain transition-transform duration-300 
+                                ${cert.link ? 'hover:scale-105' : ''} relative z-10" 
+                        loading="lazy">
+                </div>
+                
+                <!-- Content -->
+                <div class="p-5 flex-grow flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-base font-bold text-gray-900 dark:text-white mb-2 line-clamp-2">
+                            ${cert.title}
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            ${cert.issuer} • ${cert.year}
+                        </p>
+                    </div>
+                    
+                    ${cert.link ? `
+                    ` : ''}
                 </div>
             </div>
         `;
@@ -140,15 +167,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.open(cert.link, '_blank');
             });
         }
+
         certificateSwiperWrapper.appendChild(slide);
     });
 
+    // Initialize Swiper
     new Swiper('.certificate-swiper', {
         slidesPerView: 1,
-        spaceBetween: 15,
+        spaceBetween: 20,
         breakpoints: {
-            640: { slidesPerView: 2, spaceBetween: 15 },
-            1024: { slidesPerView: 3, spaceBetween: 15 }
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 24 }
         },
         navigation: {
             nextEl: '.certificate-button-next',
@@ -196,18 +225,18 @@ const projects = [
         orientation: "landscape"
     },
     {
-        title: "(Group Project) Laravel Web App using Leaflet JS and Tripay API",
-        image: "/images/project3.webp",
-        link: "https://github.com/chiknwy/I_Ben-Project",
-        description: "A group project web app displaying maps using Leaflet and supporting payments via Tripay API. \n\nI worked as the backend developer in charge of configuring the Tripay payment integration.",
+        title: "Faithful Streak – Daily Tracker App with Kotlin and Jetpack Compose",
+        image: "/images/project8.webp",
+        link: "https://github.com/GabrielNathanael/faithfulstreakapp",
+        description: "An Android application built with Kotlin and Jetpack Compose that tracks daily consistency through streaks, progress visualization, and local data storage — designed with a clean UI and offline-first approach.",
         tools: [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Leaflet.js",
-            "Tripay API Gateway"
+            "Kotlin",
+            "Jetpack Compose",
+            "Room Database",
+            "Datastore",
+            "Lottie"
         ],
-        year: 2023,
+        year: 2025,
         orientation: "portrait"
     },
     {
@@ -222,6 +251,21 @@ const projects = [
             "pickle"
         ],
         year: 2021,
+        orientation: "portrait"
+    },
+    {
+        title: "(Group Project) Laravel Web App using Leaflet JS and Tripay API",
+        image: "/images/project3.webp",
+        link: "https://github.com/chiknwy/I_Ben-Project",
+        description: "A group project web app displaying maps using Leaflet and supporting payments via Tripay API. \n\nI worked as the backend developer in charge of configuring the Tripay payment integration.",
+        tools: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Leaflet.js",
+            "Tripay API Gateway"
+        ],
+        year: 2023,
         orientation: "portrait"
     },
     {
@@ -273,26 +317,62 @@ document.addEventListener('DOMContentLoaded', () => {
     projects.forEach((project, idx) => {
         const slide = document.createElement('div');
         slide.className = 'swiper-slide';
+
+        // Unified aspect ratio for all cards - shorter height
+        const aspectClass = 'aspect-[4/3]';
+
         slide.innerHTML = `
-            <div role="button" tabindex="0" class="block project-card transition-transform duration-200 md:hover:scale-105 cursor-pointer">
-                <div class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden h-90">
-                    <img src="${project.image}" alt="${project.title}" class="w-full h-56 object-fit">
-                    <div class="p-6 pb-4">
-                        <h3 class="text-base font-semibold dark:text-white">${project.title}</h3>
+            <div role="button" 
+                 tabindex="0" 
+                 class="project-card h-full cursor-pointer group">
+                <div class="bg-white dark:bg-zinc-800 rounded-xl shadow-lg overflow-hidden 
+                            transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] 
+                            h-full flex flex-col">
+                    <!-- Image Container with Fixed 4:3 Aspect Ratio -->
+                    <div class="w-full ${aspectClass} bg-gray-100 dark:bg-zinc-700 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-cover bg-center blur-xl scale-110 opacity-30" 
+                            style="background-image: url('${project.image}');"></div>
+                        <img src="${project.image}" 
+                            alt="${project.title}" 
+                            class="w-full h-full object-contain transition-transform duration-500 
+                                    group-hover:scale-110 relative z-10" 
+                            loading="lazy">
+                    </div>
+                    
+                    <!-- Content - More compact -->
+                    <div class="p-4 flex-grow flex flex-col">
+                        <h3 class="text-sm md:text-base font-bold text-gray-900 dark:text-white line-clamp-2 
+                                   group-hover:text-violet-600 dark:group-hover:text-violet-400 
+                                   transition-colors duration-300">
+                            ${project.title}
+                        </h3>
+                        
+                        <div class="mt-auto pt-3 flex items-center text-violet-600 dark:text-violet-400 
+                                    text-xs md:text-sm font-medium opacity-0 group-hover:opacity-100 
+                                    transition-opacity duration-300">
+                            <span>View Details</span>
+                            <svg class="w-3 h-3 md:w-4 md:h-4 ml-1 transition-transform group-hover:translate-x-1" 
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
         `;
+
         slide.setAttribute('data-index', idx);
         projectSwiperWrapper.appendChild(slide);
     });
 
+    // Initialize Swiper
     new Swiper('.project-swiper', {
         slidesPerView: 1,
-        spaceBetween: 15,
+        spaceBetween: 20,
         breakpoints: {
-            640: { slidesPerView: 2, spaceBetween: 15 },
-            1024: { slidesPerView: 3, spaceBetween: 15 }
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 24 }
         },
         navigation: {
             nextEl: '.project-button-next',
@@ -306,12 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const modal = document.getElementById('project-modal');
     const closeModal = document.getElementById('close-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDescription = document.getElementById('modal-description');
-    const modalTools = document.getElementById('modal-tools');
-    const modalLink = document.getElementById('modal-link');
     const modalImage = document.getElementById('modal-image');
-    const modalImageDiv = modalImage.parentElement;
 
     function isDesktopOrTablet() {
         return window.matchMedia('(min-width: 768px)').matches;
@@ -325,6 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const modalFlex = document.getElementById('modal-flex');
             const modalImageDiv = document.getElementById('modal-image-container');
             const modalDetail = document.getElementById('modal-detail');
+
             modalContent.classList.remove('md:max-w-2xl', 'md:max-w-3xl');
             modalFlex.classList.remove('flex-row', 'flex-col');
             modalImageDiv.classList.remove('md:w-1/2', 'aspect-[3/4]', 'w-full', 'mb-6', 'md:mb-0');
@@ -334,37 +410,54 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isDesktopOrTablet()) {
                 modalImage.src = project.image;
                 modalImage.alt = project.title;
+
+                // Set blurred background image
+                modalImageDiv.style.backgroundImage = `url('${project.image}')`;
+                modalImageDiv.style.backgroundSize = 'cover';
+                modalImageDiv.style.backgroundPosition = 'center';
+                modalImageDiv.style.position = 'relative';
+
+                // Create blur overlay
+                const existingOverlay = modalImageDiv.querySelector('.blur-overlay');
+                if (!existingOverlay) {
+                    const blurOverlay = document.createElement('div');
+                    blurOverlay.className = 'blur-overlay absolute inset-0 backdrop-blur-2xl bg-black/40 dark:bg-black/60 -z-10';
+                    modalImageDiv.insertBefore(blurOverlay, modalImageDiv.firstChild);
+                }
+
                 if (project.orientation === 'portrait') {
-                    modalContent.classList.add('md:max-w-4xl');
+                    modalContent.classList.add('md:max-w-2xl');
                     modalFlex.classList.add('flex-row');
-                    modalImageDiv.classList.add('md:w-1/2', 'aspect-[3/4]');
+                    modalImageDiv.classList.add('md:w-1/2',);
                     modalDetail.classList.add('md:w-1/2');
-                    modalImage.classList.add('object-contain');
+                    modalImage.classList.add('object-contain', 'relative', 'z-10');
                 } else {
                     modalContent.classList.add('md:max-w-3xl');
                     modalFlex.classList.add('flex-col');
                     modalImageDiv.classList.add('w-full', 'mb-6');
                     modalDetail.classList.add('w-full');
-                    modalImage.classList.add('object-contain', 'max-h-[60vh]');
+                    modalImage.classList.add('object-contain', 'max-h-[60vh]', 'relative', 'z-10');
                 }
                 modalImageDiv.classList.remove('hidden');
             } else {
                 modalImage.src = '';
                 modalImage.alt = '';
                 modalImageDiv.classList.add('hidden');
+                modalImageDiv.style.backgroundImage = '';
             }
+
             modalDetail.innerHTML = `
-              <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-gray-900 dark:text-white">${project.title}</h3>
-              <p class="mb-2 md:mb-4 text-gray-700 dark:text-gray-200"> ${(project.description || '').replace(/\n/g, '<br>')} </p>
-              <div class="mb-2 md:mb-4 flex flex-wrap gap-2">
+            <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-gray-900 dark:text-white">${project.title}</h3>
+            <p class="mb-2 md:mb-4 text-gray-700 dark:text-gray-200">${(project.description || '').replace(/\n/g, '<br>')}</p>
+            <div class="mb-2 md:mb-4 flex flex-wrap gap-2">
                 <span class="font-semibold text-gray-900 dark:text-white">Tools:</span>
-                ${project.tools ? project.tools.map(t => `<span class=\"inline-block bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded px-2 py-1 mr-1 mb-1 text-xs\">${t}</span>`).join('') : ''}
-              </div>
-              <a id="modal-link" href="${project.link}" target="_blank" rel="noopener" data-modal-link
+                ${project.tools ? project.tools.map(t => `<span class="inline-block bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded px-2 py-1 mr-1 mb-1 text-xs">${t}</span>`).join('') : ''}
+            </div>
+            <a id="modal-link" href="${project.link}" target="_blank" rel="noopener" data-modal-link
                 class="inline-flex items-center gap-2 text-violet-500 hover:text-violet-400 dark:hover:text-violet-300 font-semibold transition-all duration-200 no-underline hover:scale-105 hover:font-bold">
                 <i class="fab fa-github"></i> Open in GitHub
-              </a>
-            `;
+            </a>
+        `;
 
             const modalLink = document.getElementById('modal-link');
             if (modalLink) {
@@ -374,14 +467,26 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.add('flex');
         });
     });
+
     closeModal.addEventListener('click', () => {
         modal.classList.remove('flex');
         modal.classList.add('hidden');
+        // Clean up background
+        const modalImageDiv = document.getElementById('modal-image-container');
+        modalImageDiv.style.backgroundImage = '';
+        const overlay = modalImageDiv.querySelector('.blur-overlay');
+        if (overlay) overlay.remove();
     });
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.classList.remove('flex');
             modal.classList.add('hidden');
+            // Clean up background
+            const modalImageDiv = document.getElementById('modal-image-container');
+            modalImageDiv.style.backgroundImage = '';
+            const overlay = modalImageDiv.querySelector('.blur-overlay');
+            if (overlay) overlay.remove();
         }
     });
 
@@ -398,33 +503,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalFlex.classList.remove('flex-row', 'flex-col');
                 modalImageDiv.classList.remove('md:w-1/2', 'aspect-[3/4]', 'w-full', 'mb-6', 'md:mb-0');
                 modalDetail.classList.remove('md:w-1/2', 'w-full');
-                modalImage.classList.remove('object-contain', 'object-cover', 'max-h-[60vh]');
+                modalImage.classList.remove('object-contain', 'object-cover', 'max-h-[60vh]', 'relative', 'z-10');
                 if (isDesktopOrTablet()) {
                     modalImage.src = project.image;
                     modalImage.alt = project.title;
+
+                    modalImageDiv.style.backgroundImage = `url('${project.image}')`;
+                    modalImageDiv.style.backgroundSize = 'cover';
+                    modalImageDiv.style.backgroundPosition = 'center';
+                    modalImageDiv.style.position = 'relative';
+
+                    const existingOverlay = modalImageDiv.querySelector('.blur-overlay');
+                    if (!existingOverlay) {
+                        const blurOverlay = document.createElement('div');
+                        blurOverlay.className = 'blur-overlay absolute inset-0 backdrop-blur-2xl bg-black/40 dark:bg-black/60';
+                        modalImageDiv.insertBefore(blurOverlay, modalImageDiv.firstChild);
+                    }
+
                     if (project.orientation === 'portrait') {
                         modalContent.classList.add('md:max-w-2xl');
                         modalFlex.classList.add('flex-row');
-                        modalImageDiv.classList.add('md:w-1/2', 'aspect-[3/4]');
+                        modalImageDiv.classList.add('md:w-1/2',);
                         modalDetail.classList.add('md:w-1/2');
-                        modalImage.classList.add('object-contain');
+                        modalImage.classList.add('object-contain', 'relative', 'z-10');
                     } else {
                         modalContent.classList.add('md:max-w-3xl');
                         modalFlex.classList.add('flex-col');
                         modalImageDiv.classList.add('w-full', 'mb-6');
                         modalDetail.classList.add('w-full');
-                        modalImage.classList.add('object-contain', 'max-h-[60vh]');
+                        modalImage.classList.add('object-contain', 'max-h-[60vh]', 'relative', 'z-10');
                     }
                     modalImageDiv.classList.remove('hidden');
                 } else {
                     modalImage.src = '';
                     modalImage.alt = '';
                     modalImageDiv.classList.add('hidden');
+                    modalImageDiv.style.backgroundImage = '';
+                    const overlay = modalImageDiv.querySelector('.blur-overlay');
+                    if (overlay) overlay.remove();
                 }
             }
         }
     });
 });
+
 
 function showToast(message, isError = false, duration = 3000) {
     const overlay = document.getElementById("toast-overlay");
